@@ -1,7 +1,10 @@
 @extends('layout')
 @section('title','Weather')
 @section('mycontent')
-	<h4>Weather</h4>
+	<!-- <h4>Weather</h4> -->
+    <nav class="navbar sticky-top navbar-light bg-light">
+      <a class="navbar-brand" href="#" style="font-size: 35px;">Weather</a>
+    </nav>
 	<?php
 
 	    $apiKey = "765273626bcafcd3600c8ecd20b5f3a1";

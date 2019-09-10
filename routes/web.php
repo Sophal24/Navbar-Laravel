@@ -37,4 +37,7 @@ Route::get('/post', function(){
 	return view('post');
 });
 
+// ====================================
+
+Route::get('/myname','Controller@name');
 

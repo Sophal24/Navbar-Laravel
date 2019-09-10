@@ -48,11 +48,13 @@
 
 </head>
 <body>
+
 	<div class="container">
 		@include('menu')
 		@yield('mycontent')
 
 	</div>
+
 
 </body>
 </html>
