@@ -20,7 +20,7 @@
     <!-- <label class="btn btn-secondary active" style="color: white;">
       <a href="/user"><input type="radio" name="options" id="option1" autocomplete="off" checked>Login</a>
     </label> -->
-    <a href="/post"><button type="button" class="btn btn-info">Login</button></a>
+    <a href="/login"><button type="button" class="btn btn-info">Login</button></a>
     
 
 
@@ -28,7 +28,7 @@
     <!-- <label class="btn btn-secondary">
       <a href="/post"><input type="radio" name="options" id="option2" autocomplete="off">Signup</a>
     </label> -->
-    <a href="/user"><button type="button" class="btn btn-info">Signup</button></a>
+    <a href="/register"><button type="button" class="btn btn-info">Signup</button></a>
     
 
   </div>
