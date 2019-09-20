@@ -45,3 +45,8 @@ Route::get('/myname','Controller@name');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('ok',function(){
+	return "ok";
+});
