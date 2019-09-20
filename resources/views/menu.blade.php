@@ -12,6 +12,7 @@
       <a class="nav-item nav-link active" href="/user"><i class="fas fa-users"></i> User Management</a>
       <a class="nav-item nav-link active" href="/adminlog"><i class="fas fa-users-cog"></i> Admin Log</a>
       <a class="nav-item nav-link active" href="/post"><i class="fas fa-comments"></i> Post</a>
+      <a class="nav-item nav-link active" href="#"><i class="fas fa-comments"></i> Weather History</a>
     </div>
   </div>
 
