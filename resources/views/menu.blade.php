@@ -19,8 +19,8 @@
   </div>
 
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <a class="nav-item nav-link " href="/" style="color: gray;">Login</a>
-    <a class="nav-item nav-link " href="/post" style="color: gray;">Signup</a>
+    <a class="nav-item nav-link " href="/login" style="color: gray;">Login</a>
+    <a class="nav-item nav-link " href="/register" style="color: gray;">Signup</a>
     
 
   </div>
