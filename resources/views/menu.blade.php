@@ -19,19 +19,8 @@
   </div>
 
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <!-- login button -->
-    <!-- <label class="btn btn-secondary active" style="color: white;">
-      <a href="/user"><input type="radio" name="options" id="option1" autocomplete="off" checked>Login</a>
-    </label> -->
-    <a href="/login"><button type="button" class="btn btn-primary">Login</button></a>
-    
-
-
-    <!-- signup button -->
-    <!-- <label class="btn btn-secondary">
-      <a href="/post"><input type="radio" name="options" id="option2" autocomplete="off">Signup</a>
-    </label> -->
-    <a href="/register"><button type="button" class="btn btn-primary">Signup</button></a>
+    <a class="nav-item nav-link " href="/" style="color: gray;">Login</a>
+    <a class="nav-item nav-link " href="/post" style="color: gray;">Signup</a>
     
 
   </div>
