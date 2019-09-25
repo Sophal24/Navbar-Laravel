@@ -11,31 +11,31 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 // Route::get('/', function(){
 // 	return view('menu');
 // });
 
-Route::get('/', function(){
-	return view('weather');
-});
+// Route::get('/', function(){
+// 	return view('weather');
+// });
 
 
-Route::get('/user', function(){
-	return view('user');
-});
+// Route::get('/user', function(){
+// 	return view('user');
+// });
 
-Route::get('/adminlog', function(){
-	return view('adminlog');
-});
+// Route::get('/adminlog', function(){
+// 	return view('adminlog');
+// });
 
-Route::get('/post', function(){
-	return view('post');
-});
+// Route::get('/post', function(){
+// 	return view('post');
+// });
 
 // ====================================
 
@@ -50,3 +50,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('ok',function(){
 	return "ok";
 });
+
+
+Route::get('/weather','HomeController@weather')->name('weather');
+Route::get('/user','HomeController@user')->name('user');
+Route::get('/adminlog','HomeController@adminlog')->name('adminlog');
+Route::get('/post','HomeController@post')->name('post');
+// Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhistory');

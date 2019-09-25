@@ -68,34 +68,43 @@
                 margin-bottom: 30px;
             }
 
+            body{
+                background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(9,17,126,1) 53%, rgba(8,34,137,1) 57%, rgba(7,59,153,1) 63%, rgba(6,84,170,1) 69%, rgba(5,101,181,1) 73%, rgba(4,113,189,1) 80%, rgba(0,212,255,1) 95%);
+            }
+
         </style>
     </head>
     <body>
-        <!-- <div class="flex-center position-ref full-height">
-            
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}" style="color: white;">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" style="color: white;">Login</a>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" style="color: white;">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    <!-- {{ config('app.name', 'Welcome Screen') }} -->
+                    <img src="weatherlogo.png" style="width: 250px; height: 250px;" class="weatherlogo">
+                </a>
+                <div class="title m-b-md" style="color: white;">
+                    Dashboard
+                </div>
+                <div class="title m-b-md">
+                    <a href="/home"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                    
                 </div>
             </div>
- 
-        </div> -->
-
-        <div class="container">
-            @include('menu')
-            @yield('mycontent')
         </div>
-
     </body>
 </html>

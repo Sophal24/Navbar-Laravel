@@ -1,4 +1,4 @@
-
+<!-- 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/"><i class="fas fa-cloud"></i>Weather</a>
@@ -28,3 +28,4 @@
 </nav>
 
 <hr color="blue" width="100%">
+ -->
