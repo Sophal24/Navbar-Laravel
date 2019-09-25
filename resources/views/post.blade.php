@@ -22,7 +22,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must under 140 characters"></textarea>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Send</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block sendbg">Send</button>
                 </div>
             </div>
         </div>
