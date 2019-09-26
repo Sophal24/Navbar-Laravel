@@ -80,12 +80,12 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}" style="color: white;">Home</a>
+                        <a href="{{ url('/home') }}" style="color: white;"><i class="fas fa-home"></i> Home</a>
                     @else
-                        <a href="{{ route('login') }}" style="color: white;">Login</a>
+                        <a href="{{ route('login') }}" style="color: white;"><i class="fas fa-sign-in-alt"></i> Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" style="color: white;">Register</a>
+                            <a href="{{ route('register') }}" style="color: white;"><i class="fas fa-user-circle"></i> Register</a>
                         @endif
                     @endauth
                 </div>
