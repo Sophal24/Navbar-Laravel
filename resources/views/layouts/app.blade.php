@@ -41,12 +41,24 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(
         }
 
         .loginbackground{
-            background-color: #21D4FD;
-background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-color: #FFDEE9;
+            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+
         }
         .sendbg{
             background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(9,17,126,1) 53%, rgba(8,34,137,1) 57%, rgba(7,59,153,1) 63%, rgba(6,84,170,1) 69%, rgba(5,101,181,1) 73%, rgba(4,113,189,1) 80%, rgba(0,212,255,1) 100%);    
+        }
+
+        .registerbackground{
+            background-color: #FFDEE9;
+            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);            
+        }
+
+        .verifybackground{
+            background-color: #FFDEE9;
+            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);   
         }
 
     </style>
@@ -72,16 +84,13 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(
                     <ul class="navbar-nav mr-auto" style="margin-left: -20px;">
                         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
-                          <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Users</a>
-                          <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
-                          <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
-                          <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
-
-                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
+                            @if(Auth::user())
+                                <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Users</a>
+                                <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
+                                <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
+                                <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
+                            @endif
                         </nav>
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
