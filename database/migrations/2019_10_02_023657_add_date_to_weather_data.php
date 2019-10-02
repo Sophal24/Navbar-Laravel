@@ -15,7 +15,7 @@ class AddDateToWeatherData extends Migration
     {
         Schema::table('weather_data', function (Blueprint $table) {
             //
-            $table->string('dates');
+            $table->string('date')->nullable();
         });
     }
 
