@@ -58,4 +58,6 @@ class HomeController extends Controller
     //         echo $value->id."-".$value->date."-".$value->min_tem."-".$value->max_tem."-".$value->day."-".$value->night."-".$value->humidity."-".$value->wind."-".$value->current_tem." "."<br>";
     //     }
     // }
+
+    
 }

@@ -22,3 +22,9 @@ Route::post('savesub','Controller\subscriberController@savesub');
 
 
 Route::get('saveweather','Controller\weatherController@saveweather');
+
+
+Route::get('sendsms', function(){
+	return "sd";
+});
+Route::get('sendsms','Controller\weatherController@sendsms');

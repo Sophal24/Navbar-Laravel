@@ -68,4 +68,52 @@ class weatherController extends Controller
         // echo "Weather Row added successfully."."<br>"; 
     }
 
+
+    //function to send sms to users
+    public function sendsms(Request $request){
+        
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.ideamart.io/sms/send",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello\",\n    \"destinationAddresses\":[\"tel:85510345144\"],\n    \"password\":\"6240744fda67101ba3b59b609233b43e\",\n    \"applicationId\":\"APP_053192\"\n}",
+          CURLOPT_HTTPHEADER => array(
+            "Accept: */*",
+            "Accept-Encoding: gzip, deflate",
+            "Cache-Control: no-cache",
+            "Connection: keep-alive",
+            "Content-Length: 158",
+            "Content-Type: application/json",
+            "Host: api.ideamart.io",
+            "Postman-Token: 1813eaa1-688f-4104-84fd-27e3f144ef8e,7241c101-176e-4908-84b3-023a5b6a0ba2",
+            "User-Agent: PostmanRuntime/7.17.1",
+            "cache-control: no-cache"
+          ),
+        ));
+
+        $response = curl_exec($curl);
+
+        
+
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        // if ($err) {
+        //   // return "cURL Error #:" . $err;
+        //   return "error";
+        // } else {
+        //   return json_decode($response);
+        // }
+        return $response;
+
+    }
+
 }
