@@ -65,7 +65,7 @@ class weatherController extends Controller
           echo "Insert Error";
         }
         // $save->save();
-        // echo "Weather Row added successfully."."<br>";
-        
+        // echo "Weather Row added successfully."."<br>"; 
     }
+
 }
