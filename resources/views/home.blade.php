@@ -42,7 +42,7 @@
 
                     <div style="background-color: white;">
                         <div class="report-container">
-                            <h2><?php echo $data1->name; ?> Weather Status</h2>
+                            <h2><?php echo $data1->name; ?> Current Weather Status</h2>
                             <div class="time">
                                 <div><?php echo date("l g:i a", $currentTime); ?></div>
                                 <div><?php echo date("jS F, Y",$currentTime); ?></div>

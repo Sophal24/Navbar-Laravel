@@ -48,13 +48,7 @@ class weatherController extends Controller
         $min = $data->DailyForecasts[0]->Temperature->Minimum->Value;
         $day_rain = $data->DailyForecasts[0]->Day->RainProbability;
         $night_rain = $data->DailyForecasts[0]->Night->RainProbability;
-
-
-        echo $text;
-        echo $max;
-        echo $min;
-        echo $night_rain;
-        echo $day_rain;        
+      
 
         $save->description = $text;
         $save->max_tem = $max;
@@ -63,7 +57,7 @@ class weatherController extends Controller
         $save->night_rain = $night_rain;
 
         $save->save();
-        echo "OK";
+        echo "Weather Row added successfully."."<br>";
         
     }
 }
