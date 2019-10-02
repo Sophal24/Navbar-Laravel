@@ -8,11 +8,10 @@ use App\Models\weatherModel;
 
 class weatherController extends Controller
 {
-    //
+    //save weather data requested from Accuweather API and save in database
     public function saveweather(Request $request){
 
         $save = new weatherModel;
-
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -48,6 +47,7 @@ class weatherController extends Controller
         $min = $data->DailyForecasts[0]->Temperature->Minimum->Value;
         $day_rain = $data->DailyForecasts[0]->Day->RainProbability;
         $night_rain = $data->DailyForecasts[0]->Night->RainProbability;
+        $date = date("D d.m.Y");
       
 
         $save->description = $text;
@@ -55,9 +55,17 @@ class weatherController extends Controller
         $save->min_tem = $min;
         $save->day_rain = $day_rain;
         $save->night_rain = $night_rain;
+        $save->dates = $date;
+        
+        if ($save->save()) {
+          # code...
+          echo "Weather Row added successfully."."<br>";
 
-        $save->save();
-        echo "Weather Row added successfully."."<br>";
+        }else{
+          echo "Insert Error";
+        }
+        // $save->save();
+        // echo "Weather Row added successfully."."<br>";
         
     }
 }
