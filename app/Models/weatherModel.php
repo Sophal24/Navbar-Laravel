@@ -13,7 +13,8 @@ class weatherModel extends Model
     	"max_tem",
     	"min_tem",
     	"day_rain",
-    	"night_rain"
+    	"night_rain",
+    	"date"
     ];
 }
 

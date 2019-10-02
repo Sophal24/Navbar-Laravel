@@ -55,7 +55,7 @@ class weatherController extends Controller
         $save->min_tem = $min;
         $save->day_rain = $day_rain;
         $save->night_rain = $night_rain;
-        $save->dates = $date;
+        $save->date = $date;
         
         if ($save->save()) {
           # code...
