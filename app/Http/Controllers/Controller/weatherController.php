@@ -84,7 +84,7 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello\",\n    \"destinationAddresses\":[\"tel:85510345144\"],\n    \"password\":\"6240744fda67101ba3b59b609233b43e\",\n    \"applicationId\":\"APP_053192\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Subscribers\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
@@ -101,8 +101,6 @@ class weatherController extends Controller
 
         $response = curl_exec($curl);
 
-        
-
         $err = curl_error($curl);
 
         curl_close($curl);
@@ -113,7 +111,7 @@ class weatherController extends Controller
         // } else {
         //   return json_decode($response);
         // }
-        return $response;
+        // return $response;
 
     }
 }
