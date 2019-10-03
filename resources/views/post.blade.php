@@ -12,17 +12,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
-                    <!-- <nav class="navbar sticky-top navbar-light bg-light"> -->
-                      <!-- <a class="navbar-brand" href="#" style="font-size: 35px;">Post</a> -->
-                      <p style="font-size: 35px;">Post</p>
-                    <!-- </nav> -->
+
+                    <form>
+                        <p style="font-size: 35px;">Post</p>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must under 140 characters"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block sendbg">Send</button>
+                    </form>
+                    <!-- <p style="font-size: 35px;">Post</p>
                     <div class="form-group">
-                        <!-- <label for="exampleFormControlTextarea1">News Spreading Area</label> -->
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must under 140 characters"></textarea>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-lg btn-block sendbg">Send</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block sendbg">Send</button> -->
                 </div>
             </div>
         </div>

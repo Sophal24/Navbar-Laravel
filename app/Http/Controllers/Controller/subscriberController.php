@@ -18,6 +18,6 @@ class subscriberController extends Controller
     	$data->frequency = $request->input('frequency');
 
     	$data->save();
-		echo "OK";
+		// echo "OK";
     }
 }
