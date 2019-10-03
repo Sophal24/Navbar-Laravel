@@ -20,6 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{'weatherlogo.png'}}">
+
 
 
     <!--  -->
