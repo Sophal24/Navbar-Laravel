@@ -36,7 +36,8 @@ class HomeController extends Controller
 
     public function user(){
         $data = subscriberModel::all();
-        return view('user',compact('data'));
+        $count = count($data);
+        return view('user',compact('data','count'));
     }
 
     public function adminlog(){
@@ -56,7 +57,8 @@ class HomeController extends Controller
         //     # code...
         //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
         // }
-        return view('weatherhistory', compact('data'));
+        $count = count($data);
+        return view('weatherhistory', compact('data','count'));
     }
 
     

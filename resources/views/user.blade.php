@@ -22,9 +22,9 @@
 					  </form>
 					</nav>
 
-					<!-- <div>
-						This user management tab
-					</div> -->
+					<div>
+                        Total Users : {{ $count }}
+					</div>
 
                     <table class="table table-hover">
                       <thead class="thead-dark">

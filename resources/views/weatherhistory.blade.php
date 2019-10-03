@@ -13,6 +13,10 @@
                         </div>
                     @endif
 
+                    <div>
+                      Total Weather History : {{ $count }}
+                    </div>
+
                     <table class="table table-hover">
                       <thead class="thead-dark">
                         <tr>
