@@ -84,7 +84,7 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Subscribers\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Subscribers\",\n    \"destinationAddresses\":[\"tel:A#3B4XZGfeFk1RdNe9ZzCs2KWSjq2b5p0g0IMVD/OwnYqH0Pfxq6/8MB6GI30+qi5Xk4D\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
