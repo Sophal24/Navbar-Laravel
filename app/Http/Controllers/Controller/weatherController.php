@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\weatherModel;
+use DB;
 
 class weatherController extends Controller
 {
@@ -116,4 +117,11 @@ class weatherController extends Controller
 
     }
 
+
+    //function get data from database into blade laravel
+    public function weatherhistory(){
+        $weatherhistory = DB::select('select * from weather_data');
+
+        return view('/weatherhistory',['weather_data'=>$weatherhistory]);
+    }
 }

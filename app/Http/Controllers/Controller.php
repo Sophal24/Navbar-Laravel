@@ -14,4 +14,5 @@ class Controller extends BaseController
     public function name(){
     	echo "My name is Thear Sophal";
     }
+    
 }

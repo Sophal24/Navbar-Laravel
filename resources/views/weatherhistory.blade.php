@@ -13,8 +13,8 @@
                         </div>
                     @endif
 
-                    <table class="table table-hover table-dark">
-                      <thead>
+                    <table class="table table-hover">
+                      <thead class="thead-dark">
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Description</th>
@@ -22,9 +22,11 @@
                           <th scope="col">Min Tem</th>
                           <th scope="col">Day Rain</th>
                           <th scope="col">Night Rain</th>
+                          <th scope="col">Date</th>
                         </tr>
                       </thead>
                       <tbody>
+                        
                         <tr>
                           <th scope="row">1</th>
                           <td>Nothing to say</td>
@@ -32,7 +34,25 @@
                           <td>26</td>
                           <td>47</td>
                           <td>40</td>
+                          <td>Date</td>
                         </tr>
+
+
+                        @foreach($data as $row)
+
+                        <tr>
+                          <th scope="row">{{$row->id}}</th>
+                          <td>{{$row->description}}</td>
+                          <td>{{$row->max_tem}}</td>
+                          <td>{{$row->min_tem}}</td>
+                          <td>{{$row->day_rain}}</td>
+                          <td>{{$row->night_rain}}</td>
+                          <td>{{$row->date}}</td>
+                        </tr>
+
+                        @endforeach
+
+
                       </tbody>
                     </table>
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // use App\Weather;
+use App\Models\weatherModel;
+use App\Models\subscriberModel;
 
 class HomeController extends Controller
 {
@@ -33,7 +35,8 @@ class HomeController extends Controller
     }
 
     public function user(){
-        return view('user');
+        $data = subscriberModel::all();
+        return view('user',compact('data'));
     }
 
     public function adminlog(){
@@ -44,20 +47,22 @@ class HomeController extends Controller
         return view('post');
     }
 
-    public function weatherhistory(){
-        return view('weatherhistory');
-    }
-
     // public function weatherhistory(){
-    //     $data = Weather::all();
-        
-    //     echo "<h2>Weather Data History</h2>";
 
-    //     foreach ($data as $value) {
-    //         # code...
-    //         echo $value->id."-".$value->date."-".$value->min_tem."-".$value->max_tem."-".$value->day."-".$value->night."-".$value->humidity."-".$value->wind."-".$value->current_tem." "."<br>";
-    //     }
+    //     return view('weatherhistory');
     // }
+
+    public function weatherhistory(){
+        $data = weatherModel::all();
+        
+        // echo "<h2>Weather Data History</h2>";
+
+        // foreach ($data as $value) {
+        //     # code...
+        //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
+        // }
+        return view('weatherhistory', compact('data'));
+    }
 
     
 }

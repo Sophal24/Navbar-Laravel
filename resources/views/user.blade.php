@@ -14,7 +14,7 @@
                     @endif
                     
                     <nav class="navbar navbar-light bg-light">
-					  <a class="navbar-brand" href="#" style="font-size: 35px;">User Management</a>
+					  <a class="navbar-brand" href="#" style="font-size: 35px;">Users</a>
 
 					  <form class="form-inline">
 					    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -22,14 +22,37 @@
 					  </form>
 					</nav>
 
-					<div>
+					<!-- <div>
 						This user management tab
-					</div>
+					</div> -->
 
-					<div>User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. User management is a core part to any directory service and is a basic security essential for any organization. User management enables admins to control user access and on-board and off-board users to and from IT resources. Subsequently a directory service will then authenticate, authorize, and audit user access to IT resources based on what the IT admin had dictated.</div>
+                    <table class="table table-hover">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">SubscriberId</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Frequency</th>
+                        </tr>
+                      </thead>
+                      <tbody>
 
-					<div>User management describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. User management is a core part to any directory service and is a basic security essential for any organization. User management enables admins to control user access and on-board and off-board users to and from IT resources. Subsequently a directory service will then authenticate, authorize, and audit user access to IT resources based on what the IT admin had dictated.</div>
-					<br>
+                        @foreach($data as $row)
+
+                        <tr>
+                          <th scope="row">{{$row->id}}</th>
+                          <td>{{$row->subscriberId}}</td>
+                          <td>{{$row->status}}</td>
+                          <td>{{$row->frequency}}</td>
+                        </tr>
+
+                        @endforeach
+
+
+                      </tbody>
+                    </table>
+
+					
 
                 </div>
             </div>
