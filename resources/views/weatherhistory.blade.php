@@ -26,20 +26,8 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Nothing to say</td>
-                          <td>32</td>
-                          <td>26</td>
-                          <td>47</td>
-                          <td>40</td>
-                          <td>Date</td>
-                        </tr>
-
 
                         @foreach($data as $row)
-
                         <tr>
                           <th scope="row">{{$row->id}}</th>
                           <td>{{$row->description}}</td>
@@ -49,9 +37,7 @@
                           <td>{{$row->night_rain}}</td>
                           <td>{{$row->date}}</td>
                         </tr>
-
                         @endforeach
-
 
                       </tbody>
                     </table>

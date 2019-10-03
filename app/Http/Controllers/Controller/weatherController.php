@@ -116,12 +116,4 @@ class weatherController extends Controller
         return $response;
 
     }
-
-
-    //function get data from database into blade laravel
-    public function weatherhistory(){
-        $weatherhistory = DB::select('select * from weather_data');
-
-        return view('/weatherhistory',['weather_data'=>$weatherhistory]);
-    }
 }

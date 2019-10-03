@@ -47,11 +47,6 @@ class HomeController extends Controller
         return view('post');
     }
 
-    // public function weatherhistory(){
-
-    //     return view('weatherhistory');
-    // }
-
     public function weatherhistory(){
         $data = weatherModel::all();
         
