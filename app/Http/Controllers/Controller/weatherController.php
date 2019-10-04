@@ -91,7 +91,7 @@ class weatherController extends Controller
             "Content-Length: 160",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: 9acbd5f6-f3d7-4709-a7e7-4631071d9160,82d30e0c-ac01-4ea6-a7c6-85c28a5add69",
+            "Postman-Token: 7a6ed08e-4841-4154-b1cb-6f1a10a3e0c0,f1700f0f-bb8d-4f45-9a22-6edbf2d325a5",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),
