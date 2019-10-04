@@ -18,7 +18,7 @@
                     </div>
 
                     <table class="table table-hover">
-                      <thead class="thead-dark">
+                      <thead class="tablebg">
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Description</th>

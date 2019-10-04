@@ -21,7 +21,7 @@
 
                     <table class="table table-hover">
 
-                      <thead class="thead-dark">
+                      <thead class="tablebg">
                         <tr>
                           <th scope="col">Total Users</th>
                           <th scope="col">All Time Weather History</th>
