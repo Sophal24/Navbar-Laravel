@@ -7,17 +7,14 @@
             <div class="card">
                 <!-- <div class="card-header">Dashboard</div> -->
 
-                <div class="card-body">
+                <div class="card-body loginbackground">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <!-- You are logged in! -->
-                    <nav class="navbar sticky-top navbar-light bg-light">
-                      <a class="navbar-brand" href="#" style="font-size: 35px;">Weather</a>
-                    </nav>
+                    <p class="navbar-brand" href="#" style="font-size: 35px;">Weather</p>
                     <?php
                         date_default_timezone_set('Asia/Phnom_Penh');
                         $apiKey = "765273626bcafcd3600c8ecd20b5f3a1";
@@ -40,34 +37,31 @@
 
                     ?>
 
-                    <div style="background-color: white;">
-                        <div class="report-container">
-                            <h2><?php echo $data1->name; ?> Current Weather Status</h2>
+                    
+                    <h2><?php echo $data1->name; ?> Current Weather Status</h2>
 
-                            <div class="time">
-                                <div><?php echo date("l g:i a", $currentTime); ?></div>
-                                <div><?php echo date("jS F, Y",$currentTime); ?></div>
-                                <div><?php echo ucwords($data1->weather[0]->description); ?></div>
-                            </div>
+                    <div class="time">
+                        <div><?php echo date("l g:i a", $currentTime); ?></div>
+                        <div><?php echo date("jS F, Y",$currentTime); ?></div>
+                        <div><?php echo ucwords($data1->weather[0]->description); ?></div>
+                    </div>
 
-                            <div class="weather-forecast">
-                                <img
-                                    src="http://openweathermap.org/img/w/<?php echo $data1->weather[0]->icon; ?>.png"
-                                    class="weather-icon" /> <?php echo "Current Temperature : "; echo $data1->main->temp; ?>&deg;C
-                            </div>
+                    <div class="weather-forecast">
+                        <img
+                            src="http://openweathermap.org/img/w/<?php echo $data1->weather[0]->icon; ?>.png"
+                            class="weather-icon" /> <?php echo "Current Temperature : "; echo $data1->main->temp; ?>&deg;C
+                    </div>
 
-                            <div class="time">
-                                <div>Humidity: <?php echo $data1->main->humidity; ?> %</div>
-                                <div>Wind: <?php echo $data1->wind->speed; ?> km/h</div>
-                                
-                                <div>
-                                    Current Temperature : 
-                                    <?php echo $data1->main->temp; ?> &deg;C
-                                </div>
-                            </div>
-
+                    <div class="time">
+                        <div>Humidity: <?php echo $data1->main->humidity; ?> %</div>
+                        <div>Wind: <?php echo $data1->wind->speed; ?> km/h</div>
+                        
+                        <div>
+                            Current Temperature : 
+                            <?php echo $data1->main->temp; ?> &deg;C
                         </div>
                     </div>
+                        
                 </div>
             </div>
         </div>
