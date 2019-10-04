@@ -55,6 +55,9 @@
                             Current Temperature : 
                             <?php echo $data1->main->temp; ?> &deg;C
                         </div>
+                        <div style="margin-top: 20px;">
+                            <a href="/weather"><button type="button" class="btn btn-warning">Refresh Weather</button></a>
+                        </div>
                     </div>
 
                 </div>
