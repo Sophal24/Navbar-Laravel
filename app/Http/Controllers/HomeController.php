@@ -41,7 +41,12 @@ class HomeController extends Controller
     }
 
     public function adminlog(){
-        return view('adminlog');
+        $sub = subscriberModel::all();
+        $we = weatherModel::all();
+
+        $countsub = count($sub); 
+        $countwe  = count($we);
+        return view('adminlog',compact('countsub','countwe'));
     }
 
     public function post(){

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <!-- <div class="col-md-8"> -->
+        <div class="col-md-8">
             <div class="card">
 
                 <div class="card-body">
@@ -17,16 +17,30 @@
                       <a class="navbar-brand" href="#" style="font-size: 35px;">Admin Log</a>
                     </nav> -->
                     <p style="font-size: 35px;">Admin Log</p>
-                    <div>
-                        This admin log tab
-                    </div>
                     
-                    <div>Admin Log describes the ability for administrators to manage user access to various IT resources like systems, devices, applications, storage systems, networks, SaaS services, and more. User management is a core part to any directory service and is a basic security essential for any organization. User management enables admins to control user access and on-board and off-board users to and from IT resources. Subsequently a directory service will then authenticate, authorize, and audit user access to IT resources based on what the IT admin had dictated.
-                    </div>
+
+                    <table class="table table-hover">
+
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Total Users</th>
+                          <th scope="col">All Time Weather History</th>
+                          <th scope="col">Refresh</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td scope="row">{{ $countsub }} users</td>
+                          <td>{{ $countwe }} times</td>
+                          <td><a href="/adminlog"><button type="button" class="btn btn-dark">Refresh</button></a></td>
+                        </tr>
+                      </tbody>
+                    </table>
 
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
 </div>
 @endsection
