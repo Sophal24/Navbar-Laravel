@@ -83,34 +83,31 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Subscribers\",\n    \"destinationAddresses\":[\"tel:A#3B4XZGfeFk1RdNe9ZzCs2KWSjq2b5p0g0IMVD/OwnYqH0Pfxq6/8MB6GI30+qi5Xk4D\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Everyone!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
             "Cache-Control: no-cache",
             "Connection: keep-alive",
-            "Content-Length: 158",
+            "Content-Length: 160",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: 1813eaa1-688f-4104-84fd-27e3f144ef8e,7241c101-176e-4908-84b3-023a5b6a0ba2",
+            "Postman-Token: 9acbd5f6-f3d7-4709-a7e7-4631071d9160,82d30e0c-ac01-4ea6-a7c6-85c28a5add69",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),
         ));
 
         $response = curl_exec($curl);
-
         $err = curl_error($curl);
 
         curl_close($curl);
 
-        // if ($err) {
-        //   // return "cURL Error #:" . $err;
-        //   return "error";
-        // } else {
-        //   return json_decode($response);
-        // }
-        return $response;
+        if ($err) {
+          echo "cURL Error #:" . $err;
+        } else {
+          echo $response;
+        }
 
     }
 }
