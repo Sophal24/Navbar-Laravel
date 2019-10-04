@@ -72,7 +72,6 @@ class weatherController extends Controller
 
     //function to send sms to users
     public function sendsms(Request $request){
-        
         $curl = curl_init();
 
         curl_setopt_array($curl, array(

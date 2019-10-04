@@ -39,10 +39,11 @@
 
                       @foreach($data as $row)
                       <tr>
-                        <th scope="row">{{$row->id}}</th>
-                        <td>{{$row->subscriberId}}</td>
-                        <td>{{$row->status}}</td>
-                        <td>{{$row->frequency}}</td>
+                        <th scope="row">{{ $row->id }}</th>
+                        <td>{{ Str::limit($row->subscriberId,15) }}</td>
+                        <!-- <td>{{ $row->subscriberId }}</td> -->
+                        <td>{{ $row->status }}</td>
+                        <td>{{ $row->frequency }}</td>
                       </tr>
                       @endforeach
                       

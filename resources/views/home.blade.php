@@ -43,25 +43,29 @@
                     <div style="background-color: white;">
                         <div class="report-container">
                             <h2><?php echo $data1->name; ?> Current Weather Status</h2>
+
                             <div class="time">
                                 <div><?php echo date("l g:i a", $currentTime); ?></div>
                                 <div><?php echo date("jS F, Y",$currentTime); ?></div>
                                 <div><?php echo ucwords($data1->weather[0]->description); ?></div>
                             </div>
+
                             <div class="weather-forecast">
                                 <img
                                     src="http://openweathermap.org/img/w/<?php echo $data1->weather[0]->icon; ?>.png"
-                                    class="weather-icon" /> <?php echo "Max : "; echo $data1->main->temp_max; ?>&deg;C<span
-                                    class="min-temperature"><?php echo "Min : "; echo $data1->main->temp_min; ?>&deg;C</span>
+                                    class="weather-icon" /> <?php echo "Current Temperature : "; echo $data1->main->temp; ?>&deg;C
                             </div>
+
                             <div class="time">
                                 <div>Humidity: <?php echo $data1->main->humidity; ?> %</div>
                                 <div>Wind: <?php echo $data1->wind->speed; ?> km/h</div>
+                                
                                 <div>
                                     Current Temperature : 
                                     <?php echo $data1->main->temp; ?> &deg;C
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
