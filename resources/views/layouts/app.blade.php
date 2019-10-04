@@ -68,6 +68,10 @@
             background-color: #FFDEE9;
             background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);   
         }
+        .weather-icon{
+            width: 100px;
+            height: 100px;
+        }
 
     </style>
 
