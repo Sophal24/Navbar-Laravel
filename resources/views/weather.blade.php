@@ -51,8 +51,7 @@
                                 <div class="weather-forecast">
                                     <img
                                         src="http://openweathermap.org/img/w/<?php echo $data1->weather[0]->icon; ?>.png"
-                                        class="weather-icon" /> <?php echo "Max : "; echo $data1->main->temp_max; ?>&deg;C<span
-                                        class="min-temperature"><?php echo "     Min : "; echo $data1->main->temp_min; ?>&deg;C</span>
+                                        class="weather-icon" /> <?php echo "Current Temperature : "; echo $data1->main->temp; ?>&deg;C
                                 </div>
                                 <div class="time">
                                     <div>Humidity: <?php echo $data1->main->humidity; ?> %</div>
