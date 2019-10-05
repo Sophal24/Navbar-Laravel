@@ -96,11 +96,17 @@
                     <ul class="navbar-nav mr-auto" style="margin-left: -20px;">
                         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
+                          <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Users</a>
+                          <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
+                          <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
+                          <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
                             @if(Auth::user())
-                                <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Users</a>
-                                <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
-                                <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
-                                <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
+                                
+                                <!-- @if (Route::has('register')) -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Add Admin') }}</a>
+                                    </li>
+                                <!-- @endif -->
                             @endif
                         </nav>
                     </ul>
@@ -112,11 +118,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            <!-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

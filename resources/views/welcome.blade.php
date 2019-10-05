@@ -84,9 +84,9 @@
                     @else
                         <a href="{{ route('login') }}" style="color: white;"><i class="fas fa-sign-in-alt"></i> Login</a>
 
-                        @if (Route::has('register'))
+                        <!-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" style="color: white;"><i class="fas fa-user-circle"></i> Register</a>
-                        @endif
+                        @endif -->
                     @endauth
                 </div>
             @endif
