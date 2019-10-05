@@ -33,7 +33,7 @@
                         <tr>
                           <td scope="row">{{ $countsub }} users</td>
                           <td>{{ $countwe }} times</td>
-                          <td><a href="/adminlog"><button type="button" class="btn btn-dark">Refresh</button></a></td>
+                          <td><a href="/adminlog"><button type="button" class="btn btn-warning">Refresh</button></a></td>
                         </tr>
                       </tbody>
                     </table>
