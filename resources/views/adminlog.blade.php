@@ -23,8 +23,9 @@
 
                       <thead class="tablebg">
                         <tr>
-                          <th scope="col">Total Users</th>
-                          <th scope="col">All Time Weather History</th>
+                          <th scope="col">Subscribers</th>
+                          <th scope="col">Weather History</th>
+                          <th scope="col">Unsubscribers</th>
                           <th scope="col">Refresh</th>
                         </tr>
                       </thead>
@@ -33,7 +34,8 @@
                         <tr>
                           <td scope="row">{{ $countsub }} users</td>
                           <td>{{ $countwe }} times</td>
-                          <td><a href="/adminlog"><button type="button" class="btn btn-warning">Refresh</button></a></td>
+                          <td>{{ $countunsub }} users</td>
+                          <td><a href="/adminlog"><button type="button" class="btn btn-warning" >Refresh</button></a></td>
                         </tr>
                       </tbody>
                     </table>

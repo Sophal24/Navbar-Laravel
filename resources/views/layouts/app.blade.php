@@ -96,7 +96,7 @@
                     <ul class="navbar-nav mr-auto" style="margin-left: -20px;">
                         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
-                          <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Users</a>
+                          <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Subscribers</a>
                           <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
                           <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
                           <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>

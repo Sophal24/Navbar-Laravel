@@ -34,19 +34,37 @@ class HomeController extends Controller
         return view('weather');
     }
 
+    // public function user(){
+    //     $data = subscriberModel::all();
+    //     $count = count($data);
+    //     return view('user',compact('data','count'));
+    // }
+
     public function user(){
-        $data = subscriberModel::all();
+        $query = subscriberModel::all();
+        $data = $query->where('status','REGISTERED');
         $count = count($data);
         return view('user',compact('data','count'));
     }
 
+    public function unuser(){
+        $query = subscriberModel::all();
+        $data = $query->where('status','UNREGISTERED');
+        $count = count($data);
+        return view('unuser',compact('data','count'));
+    }
+
     public function adminlog(){
+
         $sub = subscriberModel::all();
+        $subscriber = $sub->where('status','REGISTERED');
+        $unsubscriber = $sub->where('status','UNREGISTERED');
         $we = weatherModel::all();
 
-        $countsub = count($sub); 
+        $countsub = count($subscriber);
+        $countunsub = count($unsubscriber); 
         $countwe  = count($we);
-        return view('adminlog',compact('countsub','countwe'));
+        return view('adminlog',compact('countsub','countunsub','countwe'));
     }
 
     public function post(){

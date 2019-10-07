@@ -14,16 +14,18 @@
                     @endif
                     
                     <nav class="navbar navbar-light bg-light">
-					             <a class="navbar-brand" href="#" style="font-size: 35px;">Users</a>
+					             <a class="navbar-brand" href="/user" style="font-size: 35px;">Subscribers</a>
 
-      					   <form class="form-inline">
-      					    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      						<button type="button" class="btn btn-dark">Search</button>
-      					  </form>
+      					       <form class="form-inline">
+      					         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      						      <button type="button" class="btn btn-dark">Search</button> -->
+                        <a href="unuser"><button type="button" class="btn btn-danger">Unsubscriber</button></a>
+      					       </form>
 					         </nav>
 
         					<div>
                       Total Users : {{ $count }}
+
         					</div>
 
                   <table class="table table-hover">
