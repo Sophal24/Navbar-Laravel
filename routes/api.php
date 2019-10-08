@@ -27,6 +27,7 @@ Route::get('saveweather','Controller\weatherController@saveweather');
 // Route::get('sendsms', function(){
 // 	return "sd";
 // });
-Route::get('sendsms','Controller\weatherController@sendsms');
+// Route::get('sendsms','Controller\weatherController@sendsms');
+Route::get('sendsms','Controller\weatherController@send');
 
 Route::get('testfixie','Controller\weatherController@testfixie');

@@ -115,33 +115,36 @@ class weatherController extends Controller
     public function sendsms(Request $request){
 
         $fixieUrl = getenv("FIXIE_URL");
+        
         $parsedFixieUrl = parse_url($fixieUrl);
+        echo $fixieUrl."<br>";
+        print_r($parsedFixieUrl);
+        echo "<br>";
 
         $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
         $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
           CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_PROXY=>$proxy,
-          CURLOPT_PROXYUSERPWD=>$proxyAuth,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Afternoon!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
             "Cache-Control: no-cache",
             "Connection: keep-alive",
-            "Content-Length: 158",
+            "Content-Length: 160",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: c2d21c59-3d87-4519-80f3-a0267c5ff393,f1911321-dcde-437e-bb0b-aea00e526a4f",
+            "Postman-Token: 53abe4fc-44fe-48dc-be4c-62acd5cbaeca,d4b32d84-2e5d-4114-951e-44a730c17934",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),
@@ -160,6 +163,64 @@ class weatherController extends Controller
 
     }
 
+    //---------------------------------------------------------
+
+    public function send(Request $request){
+
+        $fixieUrl = getenv("FIXIE_URL");
+        
+        $parsedFixieUrl = parse_url($fixieUrl);
+        echo $fixieUrl."<br>";
+        print_r($parsedFixieUrl);
+        echo "<br>";
+
+        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+
+        $handle = curl_init();
+
+        $url = "https://api.ideamart.io/sms/send";
+         
+        // Array with the fields names and values.
+        // The field names should match the field names in the form.
+         
+        $postData = array(
+          'message' => 'Good Afternon!',
+          'destinationAddresses'  => '["tel:all"]',
+          'password'    => '4f57f292e3351ffb49cb4b7b2ec09c71',
+          'applicationId'    => 'APP_053430'
+        );
+         
+        curl_setopt_array($handle, array(
+            
+            CURLOPT_URL => $url,
+             // Enable the post response.
+            CURLOPT_POST       => true,
+            // The data to transfer with the response.
+            CURLOPT_POSTFIELDS => $postData,
+            CURLOPT_RETURNTRANSFER     => true,
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYUSERPWD => $proxyAuth
+
+          )
+        );
+         
+        $data = curl_exec($handle);
+         
+        curl_close($handle);
+         
+        echo $data;
+        if ($data == false) {
+            # code...
+            echo "unsuccessfully";
+        }
+        else{
+            echo "successfully";    
+        }
+        
+    }
+
+    //---------------------------------------------------------
     // public function testfixie(){
     //     function proxyRequest() {
 
@@ -180,7 +241,7 @@ class weatherController extends Controller
     //   print_r($response);
     // }
 
-
+    //---------------------------------------------------------
     // function proxyRequest() {
     //     $fixieUrl = getenv("FIXIE_URL");
     //     $parsedFixieUrl = parse_url($fixieUrl);
