@@ -117,10 +117,11 @@ class weatherController extends Controller
         $fixieUrl = getenv("FIXIE_URL");
         $parsedFixieUrl = parse_url($fixieUrl);
 
-        $proxy = $parsedFixieUrl['DB_HOST'].":".$parsedFixieUrl['DB_PORT'];
-        $proxyAuth = $parsedFixieUrl['DB_USERNAME'].":".$parsedFixieUrl['DB_PASSWORD'];
+        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
 
         $curl = curl_init();
+
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
           CURLOPT_RETURNTRANSFER => true,
@@ -131,16 +132,16 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Everyone!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
             "Cache-Control: no-cache",
             "Connection: keep-alive",
-            "Content-Length: 160",
+            "Content-Length: 158",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: 7a6ed08e-4841-4154-b1cb-6f1a10a3e0c0,f1700f0f-bb8d-4f45-9a22-6edbf2d325a5",
+            "Postman-Token: c2d21c59-3d87-4519-80f3-a0267c5ff393,f1911321-dcde-437e-bb0b-aea00e526a4f",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),
@@ -151,11 +152,11 @@ class weatherController extends Controller
 
         curl_close($curl);
 
-        // if ($err) {
-        //   echo "cURL Error #:" . $err;
-        // } else {
-        //   echo $response;
-        // }
+        if ($err) {
+          echo "cURL Error #:" . $err;
+        } else {
+          echo $response;
+        }
 
     }
 
@@ -179,5 +180,22 @@ class weatherController extends Controller
     //   print_r($response);
     // }
 
+
+    // function proxyRequest() {
+    //     $fixieUrl = getenv("FIXIE_URL");
+    //     $parsedFixieUrl = parse_url($fixieUrl);
+
+    //     $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+    //     $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+
+    //     $ch = curl_init($url);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     curl_setopt($ch, CURLOPT_PROXY, $proxy);
+    //     curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+    //     curl_close($ch);
+    // }
+
+    // $response = proxyRequest();
+    // print_r($response);
     
 }
