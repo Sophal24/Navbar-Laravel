@@ -117,7 +117,7 @@ class weatherController extends Controller
         $fixieUrl = getenv("FIXIE_URL");
         
         $parsedFixieUrl = parse_url($fixieUrl);
-        echo $fixieUrl."<br>";
+        // echo $fixieUrl."<br>";
         print_r($parsedFixieUrl);
         echo "<br>";
 
@@ -135,7 +135,7 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Afternoon!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Sandaru!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
