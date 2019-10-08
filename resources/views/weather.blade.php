@@ -37,7 +37,7 @@
 
                     ?>
 
-                    <h2><?php echo $data1->name; ?> Current Weather Status</h2>
+                    <h2><?php echo $data1->name; ?>,KH Current Weather Status</h2>
                     <div class="time">
                         <div><?php echo date("l g:i a", $currentTime); ?></div>
                         <div><?php echo date("jS F, Y",$currentTime); ?></div>
@@ -49,8 +49,9 @@
                             class="weather-icon" /> <?php echo "Current Temperature : "; echo $data1->main->temp; ?> &deg;C
                     </div>
                     <div class="time">
-                        <div>Humidity: <?php echo $data1->main->humidity; ?> %</div>
-                        <div>Wind: <?php echo $data1->wind->speed; ?> km/h</div>
+                        <div>Humidity : <?php echo $data1->main->humidity; ?> %</div>
+                        <div>wind     : <?php echo $data1->wind->speed; ?> km/h</div>
+                        <div>Pressure : <?php echo $data1->main->pressure; ?> hpa</div>
                         <div>
                             Current Temperature : 
                             <?php echo $data1->main->temp; ?> &deg;C

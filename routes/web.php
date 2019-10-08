@@ -61,4 +61,5 @@ Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhist
 
 //Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhistory');
 
+// Route::get('testfixie','Controller\weatherController@testfixie');
 

@@ -14,10 +14,10 @@
                     @endif
                     
                     <nav class="navbar navbar-light bg-light">
-					             <a class="navbar-brand" href="/unuser" style="font-size: 35px;">Unsubscriber</a>
+					             <a class="navbar-brand" href="/unuser" style="font-size: 35px;color: red;">Unsubscriber</a>
 
       					   <form class="form-inline">
-                  <a href="/user"><button type="button" class="btn btn-success">Users</button></a>
+                  <a href="/user"><button type="button" class="btn btn-success">Go to Users</button></a>
       					  </form>
 					         </nav>
 

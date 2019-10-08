@@ -71,12 +71,61 @@ class weatherController extends Controller
 
 
     //function to send sms to users
-    public function sendsms(Request $request){
-        $curl = curl_init();
+    // public function sendsms(Request $request){
 
+    //     $curl = curl_init();
+
+    //     curl_setopt_array($curl, array(
+    //       CURLOPT_URL => "https://api.ideamart.io/sms/send",
+    //       CURLOPT_RETURNTRANSFER => true,
+    //       CURLOPT_ENCODING => "",
+    //       CURLOPT_MAXREDIRS => 10,
+    //       CURLOPT_TIMEOUT => 30,
+    //       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    //       CURLOPT_CUSTOMREQUEST => "POST",
+    //       CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Everyone!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+    //       CURLOPT_HTTPHEADER => array(
+    //         "Accept: */*",
+    //         "Accept-Encoding: gzip, deflate",
+    //         "Cache-Control: no-cache",
+    //         "Connection: keep-alive",
+    //         "Content-Length: 160",
+    //         "Content-Type: application/json",
+    //         "Host: api.ideamart.io",
+    //         "Postman-Token: 7a6ed08e-4841-4154-b1cb-6f1a10a3e0c0,f1700f0f-bb8d-4f45-9a22-6edbf2d325a5",
+    //         "User-Agent: PostmanRuntime/7.17.1",
+    //         "cache-control: no-cache"
+    //       ),
+    //     ));
+
+    //     $response = curl_exec($curl);
+    //     $err = curl_error($curl);
+
+    //     curl_close($curl);
+
+    //     if ($err) {
+    //       echo "cURL Error #:" . $err;
+    //     } else {
+    //       echo $response;
+    //     }
+
+    // }
+
+    //function to send sms to users
+    public function sendsms(Request $request){
+
+        $fixieUrl = getenv("FIXIE_URL");
+        $parsedFixieUrl = parse_url($fixieUrl);
+
+        $proxy = $parsedFixieUrl['DB_HOST'].":".$parsedFixieUrl['DB_PORT'];
+        $proxyAuth = $parsedFixieUrl['DB_USERNAME'].":".$parsedFixieUrl['DB_PASSWORD'];
+
+        $curl = curl_init();
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
           CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_PROXY=>$proxy,
+          CURLOPT_PROXYUSERPWD=>$proxyAuth,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
@@ -102,11 +151,33 @@ class weatherController extends Controller
 
         curl_close($curl);
 
-        if ($err) {
-          echo "cURL Error #:" . $err;
-        } else {
-          echo $response;
-        }
+        // if ($err) {
+        //   echo "cURL Error #:" . $err;
+        // } else {
+        //   echo $response;
+        // }
 
     }
+
+    // public function testfixie(){
+    //     function proxyRequest() {
+
+    //     $fixieUrl = getenv("FIXIE_URL");
+    //     $parsedFixieUrl = parse_url($fixieUrl);
+
+    //     $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+    //     $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
+
+    //     $ch = curl_init();
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     curl_setopt($ch, CURLOPT_PROXY, $proxy);
+    //     curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+    //     curl_close($ch);
+    //   }
+
+    //   $response = proxyRequest();
+    //   print_r($response);
+    // }
+
+    
 }

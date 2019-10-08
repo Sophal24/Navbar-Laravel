@@ -40,7 +40,15 @@ class HomeController extends Controller
     //     return view('user',compact('data','count'));
     // }
 
+    // public function user(){
+    //     $query = subscriberModel::all();
+    //     $data = $query->where('status','REGISTERED');
+    //     $count = count($data);
+    //     return view('user',compact('data','count'));
+    // }
+
     public function user(){
+
         $query = subscriberModel::all();
         $data = $query->where('status','REGISTERED');
         $count = count($data);
@@ -72,7 +80,7 @@ class HomeController extends Controller
     }
 
     public function weatherhistory(){
-        $data = weatherModel::all();
+        $data = weatherModel::all()->sortByDesc("id");
         
         // echo "<h2>Weather Data History</h2>";
 
@@ -80,6 +88,7 @@ class HomeController extends Controller
         //     # code...
         //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
         // }
+        
         $count = count($data);
         return view('weatherhistory', compact('data','count'));
     }
