@@ -37,7 +37,7 @@
                         <th scope="col">Frequency</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="font-size: 18px;">
 
                       @foreach($data as $row)
                       <tr>

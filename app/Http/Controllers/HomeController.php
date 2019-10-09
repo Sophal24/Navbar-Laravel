@@ -80,17 +80,16 @@ class HomeController extends Controller
     }
 
     public function weatherhistory(){
-        $data = weatherModel::all()->sortByDesc("id");
-        
+        $data = weatherModel::all()->sortByDesc("id");     
         // echo "<h2>Weather Data History</h2>";
 
         // foreach ($data as $value) {
         //     # code...
         //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
         // }
-        
+        // $distinct = distinct($data);
         $count = count($data);
-        return view('weatherhistory', compact('data','count'));
+        return view('weatherhistory', compact('data','count','distinct'));
     }
 
     

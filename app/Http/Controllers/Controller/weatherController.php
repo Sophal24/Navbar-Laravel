@@ -114,16 +114,15 @@ class weatherController extends Controller
     //function to send sms to users
     public function sendsms(Request $request){
 
-        $fixieUrl = getenv("FIXIE_URL");
+        // $fixieUrl = getenv("FIXIE_URL");
         
-        $parsedFixieUrl = parse_url($fixieUrl);
+        // $parsedFixieUrl = parse_url($fixieUrl);
         // echo $fixieUrl."<br>";
-        print_r($parsedFixieUrl);
-        echo "<br>";
+        // print_r($parsedFixieUrl);
+        // echo "<br>";
 
-        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
-        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
-
+        // $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
+        // $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];
 
         $curl = curl_init();
 
@@ -135,16 +134,16 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Hello Sandaru!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
             "Cache-Control: no-cache",
             "Connection: keep-alive",
-            "Content-Length: 160",
+            "Content-Length: 158",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: 53abe4fc-44fe-48dc-be4c-62acd5cbaeca,d4b32d84-2e5d-4114-951e-44a730c17934",
+            "Postman-Token: acc850dd-7c44-407e-a4ab-5aa032975512,bb1152c0-2159-4f7a-8a12-481aab289ff5",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),

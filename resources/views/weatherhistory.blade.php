@@ -29,7 +29,7 @@
                           <th scope="col">Date</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody style="font-size: 15px;">
 
                         @foreach($data as $row)
                         <tr>
