@@ -131,17 +131,56 @@ class weatherController extends Controller
           $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
           $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
 
-          $url = "http://ip.quotaguard.com/";
+          // $url = "http://ip.quotaguard.com/";
 
-          $ch = curl_init();
-          curl_setopt($ch, CURLOPT_URL, $url);
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-          curl_setopt($ch, CURLOPT_PROXY, $proxyUrl);
-          curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
-          curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
-          $response = curl_exec($ch);
-          // return $response;
+          // $ch = curl_init();
+          // curl_setopt($ch, CURLOPT_URL, $url);
+          // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+          // curl_setopt($ch, CURLOPT_PROXY, $proxyUrl);
+          // curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
+          // curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyAuth);
+          // $response = curl_exec($ch);
+          // // return $response;
+          // echo $response;
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.ideamart.io/sms/send",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_PROXY => $proxyUrl,
+          CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
+          CURLOPT_PROXYUSERPWD => $proxyAuth,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_HTTPHEADER => array(
+            "Accept: */*",
+            "Accept-Encoding: gzip, deflate",
+            "Cache-Control: no-cache",
+            "Connection: keep-alive",
+            "Content-Length: 158",
+            "Content-Type: application/json",
+            "Host: api.ideamart.io",
+            "Postman-Token: acc850dd-7c44-407e-a4ab-5aa032975512,b8b439fe-9e5c-48b7-b426-9a55c8a3e5ee",
+            "User-Agent: PostmanRuntime/7.17.1",
+            "cache-control: no-cache"
+          ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+          echo "cURL Error #:" . $err;
+        } else {
           echo $response;
+        }
     }
     
 }
