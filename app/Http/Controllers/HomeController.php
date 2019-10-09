@@ -89,7 +89,7 @@ class HomeController extends Controller
         // }
         // $distinct = distinct($data);
         $count = count($data);
-        return view('weatherhistory', compact('data','count','distinct'));
+        return view('weatherhistory', compact('data','count'));
     }
 
     
