@@ -75,25 +75,17 @@ class weatherController extends Controller
     //function to send sms to users
     public function sendsms(Request $request){
 
-        $fixieUrl = getenv("FIXIE_URL");
-        $parsedFixieUrl = parse_url($fixieUrl);
-
-        $proxy = $parsedFixieUrl['host'].":".$parsedFixieUrl['port'];
-        $proxyAuth = $parsedFixieUrl['user'].":".$parsedFixieUrl['pass'];$parsedFixieUrl = parse_url($fixieUrl);
-
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
-          CURLOPT_RETURNTRANSFER =>true,
-          CURLOPT_PROXY => $proxy,
-          CURLOPT_PROXYUSERPWD => $proxyAuth,
+          CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good night\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
@@ -114,11 +106,9 @@ class weatherController extends Controller
         curl_close($curl);
 
         if ($err) {
-            echo "cURL Error #:" . $err;
+          echo "cURL Error #:" . $err;
         } else {
-            echo $proxy."<br>";
-            echo $proxyAuth."<br>";
-            echo $response;
+          echo $response;
         }
 
         
