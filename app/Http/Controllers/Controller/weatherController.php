@@ -88,6 +88,11 @@ class weatherController extends Controller
     //     curl_setopt_array($curl, array(
     //       CURLOPT_URL => "https://api.ideamart.io/sms/send",
     //       CURLOPT_RETURNTRANSFER => true,
+    //       // 
+    //       CURLOPT_PROXY => $proxy,
+    //       CURLOPT_PROXYUSERPWD => $proxyAuth,
+    //       // 
+
     //       CURLOPT_ENCODING => "",
     //       CURLOPT_MAXREDIRS => 10,
     //       CURLOPT_TIMEOUT => 30,
@@ -106,8 +111,6 @@ class weatherController extends Controller
     //         "User-Agent: PostmanRuntime/7.17.1",
     //         "cache-control: no-cache"
     //       ),
-    //         curl_setopt($curl, CURLOPT_PROXY, $proxy),
-    //         curl_setopt($curl, CURLOPT_PROXYUSERPWD, $proxyAuth),
     //     ));
 
     //     $response = curl_exec($curl);
@@ -126,10 +129,10 @@ class weatherController extends Controller
     //function to send sms to users via QuotaQuard
     public function sendsms(Request $request){
         $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
-          $quotaguard = parse_url($quotaguard_env);
+        $quotaguard = parse_url($quotaguard_env);
 
-          $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
-          $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
+        $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
+        $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
 
           // $url = "http://ip.quotaguard.com/";
 
@@ -148,15 +151,17 @@ class weatherController extends Controller
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
           CURLOPT_RETURNTRANSFER => true,
+          // 
           CURLOPT_PROXY => $proxyUrl,
           CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
           CURLOPT_PROXYUSERPWD => $proxyAuth,
+          // 
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Afternoon Sophal!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",

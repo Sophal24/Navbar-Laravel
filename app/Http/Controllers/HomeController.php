@@ -92,5 +92,9 @@ class HomeController extends Controller
         return view('weatherhistory', compact('data','count'));
     }
 
+    public function ok(){
+        return view('ok');
+    }
+
     
 }

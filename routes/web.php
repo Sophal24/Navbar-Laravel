@@ -58,6 +58,7 @@ Route::get('/unuser','HomeController@unuser')->name('unuser');
 Route::get('/adminlog','HomeController@adminlog')->name('adminlog');
 Route::get('/post','HomeController@post')->name('post');
 Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhistory');
+Route::get('/ok','HomeController@ok')->name('ok');
 
 //Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhistory');
 
