@@ -65,8 +65,7 @@ class weatherController extends Controller
         // $save->save();
         // echo "Weather Row added successfully."."<br>"; 
     }
-
-
+    
 
 
     //function to send sms to users via FIXIE 
@@ -154,7 +153,7 @@ class weatherController extends Controller
           CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
           CURLOPT_PROXYUSERPWD => $proxyAuth,
           // 
-          
+
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,

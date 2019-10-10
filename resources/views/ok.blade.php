@@ -13,7 +13,7 @@
                         </div>
                     @endif
                     <div class="alert alert-success" role="alert">
-                        SMS send Successfully. 
+                        SMS send Successfully. !!! 
                     </div>
                     <a href="/post"><button type="button" class="btn btn-success">OK</button></a>
                     
