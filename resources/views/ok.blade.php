@@ -13,9 +13,9 @@
                         </div>
                     @endif
                     <div class="alert alert-success" role="alert">
-                        This is a success alert—check it out!
+                        SMS send Successfully. 
                     </div>
-                    <a href="/post"><button type="button" class="btn btn-success">Success</button></a>
+                    <a href="/post"><button type="button" class="btn btn-success">OK</button></a>
                     
                 </div>
             </div>
