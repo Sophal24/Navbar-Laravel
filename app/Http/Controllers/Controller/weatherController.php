@@ -11,7 +11,6 @@ class weatherController extends Controller
 {
     //save weather data requested from Accuweather API and save in database
     public function saveweather(Request $request){
-
         $save = new weatherModel;
 
         $curl = curl_init();
@@ -40,7 +39,6 @@ class weatherController extends Controller
         $err = curl_error($curl);
 
         curl_close($curl);
-
         $data = json_decode($response);
 
         $text = $data->Headline->Text;
@@ -49,7 +47,6 @@ class weatherController extends Controller
         $day_rain = $data->DailyForecasts[0]->Day->RainProbability;
         $night_rain = $data->DailyForecasts[0]->Night->RainProbability;
         $date = date("D d.m.Y");
-      
 
         $save->description = $text;
         $save->max_tem = $max;
@@ -189,3 +186,4 @@ class weatherController extends Controller
     }
     
 }
+
