@@ -148,26 +148,28 @@ class weatherController extends Controller
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.ideamart.io/sms/send",
           CURLOPT_RETURNTRANSFER => true,
+
           // 
           CURLOPT_PROXY => $proxyUrl,
           CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
           CURLOPT_PROXYUSERPWD => $proxyAuth,
           // 
+          
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Afternoon Sophal!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Good Morning from Weather Alert Internship project!\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Accept: */*",
             "Accept-Encoding: gzip, deflate",
             "Cache-Control: no-cache",
             "Connection: keep-alive",
-            "Content-Length: 158",
+            "Content-Length: 196",
             "Content-Type: application/json",
             "Host: api.ideamart.io",
-            "Postman-Token: acc850dd-7c44-407e-a4ab-5aa032975512,b8b439fe-9e5c-48b7-b426-9a55c8a3e5ee",
+            "Postman-Token: 06f2816b-57f3-41cd-b0ad-abe07edb7cf0,8fa544eb-9d2c-4653-b6ea-01a120c46ce4",
             "User-Agent: PostmanRuntime/7.17.1",
             "cache-control: no-cache"
           ),
