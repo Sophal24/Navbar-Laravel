@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 // use App\Weather;
 use App\Models\weatherModel;
 use App\Models\subscriberModel;
+use App\Models\textareaModel;
+use DB;
 
 class HomeController extends Controller
 {
@@ -93,6 +95,75 @@ class HomeController extends Controller
     }
 
     public function ok(){
+        return view('ok');
+    }
+
+
+    public function textarea (){
+        $text = new textareaModel;
+
+        $text->text = request('text');
+        // echo $text;
+        // $text->save();
+        $text->save();
+
+        //
+        // if ($text->save()) {
+        //     # code...
+        //     echo "Save successfully";
+        // }else{
+        //     echo "Insert Failed";
+        // }
+
+        $data = textareaModel::all()->sortByDesc("id")->first()->text;
+        // echo $data;
+
+        //send sms section
+        $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
+        $quotaguard = parse_url($quotaguard_env);
+
+        $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
+        $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.ideamart.io/sms/send",
+          CURLOPT_RETURNTRANSFER => true,
+
+          //
+          CURLOPT_PROXY => $proxyUrl,
+          CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
+          CURLOPT_PROXYUSERPWD => $proxyAuth,
+          //
+
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"$data\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_HTTPHEADER => array(
+            "Content-Type: application/json",
+            "Postman-Token: 821fc916-caba-4789-ae01-91a2f49da20b",
+            "cache-control: no-cache"
+          ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        //return success or fail status when send sms out
+        // if ($err) {
+        //   echo "cURL Error #:" . $err;
+        // } else {
+        //   echo $response;
+        // }
+
+        // $text->save();
+        
         return view('ok');
     }
 

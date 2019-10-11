@@ -251,7 +251,6 @@ class weatherController extends Controller
           CURLOPT_PROXY => $proxyUrl,
           CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
           CURLOPT_PROXYUSERPWD => $proxyAuth,
-
           //
 
           CURLOPT_ENCODING => "",
@@ -280,4 +279,3 @@ class weatherController extends Controller
     }
     
 }
-

@@ -61,4 +61,7 @@ Route::get('/ok','HomeController@ok')->name('ok');
 //Route::get('/weatherhistory','HomeController@weatherhistory')->name('weatherhistory');
 
 // Route::get('testfixie','Controller\weatherController@testfixie');
+Route::post('/textarea','HomeController@textarea');
+
+
 
