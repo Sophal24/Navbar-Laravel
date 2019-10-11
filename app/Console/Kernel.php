@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
                 // ->timezone('Asia/Phnom_Penh');
 
         $schedule->command('save:weather')
-                ->hourlyAt(15);
+                ->hourlyAt(25);
                  // ->everyMinute();
     }
 
