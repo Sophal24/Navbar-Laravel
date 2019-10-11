@@ -100,14 +100,14 @@
                           <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
                           <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
                           <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
-                            @if(Auth::user())
+                            <!-- @if(Auth::user()) -->
                                 
                                 <!-- @if (Route::has('register')) -->
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Add Admin') }}</a>
-                                    </li>
+                                    </li> -->
                                 <!-- @endif -->
-                            @endif
+                            <!-- @endif -->
                         </nav>
                     </ul>
 
@@ -146,6 +146,7 @@
                 </div>
             </div>
         </nav>
+        <br>
 
         <main>
             @yield('content')

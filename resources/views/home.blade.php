@@ -61,7 +61,7 @@
                             <?php echo $data1->main->temp; ?> &deg;C
                         </div>
                         <div style="margin-top: 20px;">
-                            <a href="/home"><button type="button" class="btn btn-warning">Refresh Weather</button></a>
+                            <a href="/home"><button type="button" class="btn btn-info">Refresh Weather</button></a>
                         </div>
                     </div>
                         

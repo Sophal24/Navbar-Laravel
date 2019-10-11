@@ -51,13 +51,13 @@
                     <div class="time">
                         <div>Humidity : <?php echo $data1->main->humidity; ?> %</div>
                         <div>wind     : <?php echo $data1->wind->speed; ?> km/h</div>
-                        <div>Pressure : <?php echo $data1->main->pressure; ?> hpa</div>
+                        <!-- <div>Pressure : <?php echo $data1->main->pressure; ?> hpa</div> -->
                         <div>
                             Current Temperature : 
                             <?php echo $data1->main->temp; ?> &deg;C
                         </div>
                         <div style="margin-top: 20px;">
-                            <a href="/weather"><button type="button" class="btn btn-warning">Refresh Weather</button></a>
+                            <a href="/weather"><button type="button" class="btn btn-info">Refresh Weather</button></a>
                         </div>
                     </div>
 

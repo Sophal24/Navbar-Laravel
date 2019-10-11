@@ -82,7 +82,8 @@ class HomeController extends Controller
     }
 
     public function weatherhistory(){
-        $data = weatherModel::all()->sortByDesc("id");     
+        $data = weatherModel::all()->sortByDesc("id"); 
+        // $data = weatherModel::orderBy('id','asc')->groupBy('id')->get();    
         // echo "<h2>Weather Data History</h2>";
 
         // foreach ($data as $value) {
@@ -170,6 +171,7 @@ class HomeController extends Controller
         
         return view('ok');
     }
+
 
     
 }

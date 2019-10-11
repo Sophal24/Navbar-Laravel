@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\SaveWeather::class,
     ];
 
     /**
@@ -24,8 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('save:weather')
+                ->dailyAt('7:00')
+                 // ->everyMinute();
+                ->timezone('Asia/Phnom_Penh');
     }
 
     /**

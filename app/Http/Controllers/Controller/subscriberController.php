@@ -20,4 +20,7 @@ class subscriberController extends Controller
     	$data->save();
 		// echo "OK";
     }
+
+
+
 }
