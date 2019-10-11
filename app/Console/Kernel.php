@@ -25,10 +25,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('save:weather')
-                ->dailyAt('7:00')
+        // $schedule->command('save:weather')
+                // ->dailyAt('7:00')
                  // ->everyMinute();
-                ->timezone('Asia/Phnom_Penh');
+                // ->timezone('Asia/Phnom_Penh');
+
+        $schedule->command('save:weather')
+                ->hourlyAt(15);
+                 // ->everyMinute();
     }
 
     /**

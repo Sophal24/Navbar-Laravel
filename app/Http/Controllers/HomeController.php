@@ -168,7 +168,6 @@ class HomeController extends Controller
         // }
 
         // $text->save();
-        
         return view('ok');
     }
 

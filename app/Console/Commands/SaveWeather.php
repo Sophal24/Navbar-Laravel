@@ -101,10 +101,6 @@ class SaveWeather extends Command
 
 
 
-
-
-
-
         $save = new weatherModel;
 
         $curl = curl_init();
@@ -142,17 +138,42 @@ class SaveWeather extends Command
         $night_rain = $data->DailyForecasts[0]->Night->RainProbability;
         $date = date("D d.m.Y");
 
+        $save->description = $text;
+        $save->max_tem = $max;
+        $save->min_tem = $min;
+        $save->day_rain = $day_rain;
+        $save->night_rain = $night_rain;
+        $save->date = $date;
+        
+        // if ($save->save()) {
+        //   # code...
+        //   echo "Weather Row added successfully."."<br>";
+
+        // }else{
+        //   echo "Insert Error";
+        // }
+        $save->save();
+        // echo "Weather Row added successfully."."<br>";
+
+        $des = weatherModel::all()->sortByDesc("id")->first()->description;
+        $ma = weatherModel::all()->sortByDesc("id")->first()->max_tem;
+        $mi = weatherModel::all()->sortByDesc("id")->first()->min_tem;
+        $day = weatherModel::all()->sortByDesc("id")->first()->day_rain;
+        $night = weatherModel::all()->sortByDesc("id")->first()->night_rain;
+        // echo $des;
+        // echo $ma;
+        // echo $mi;
+        // echo $day;
+        // echo $night;
 
 
         ///----------------send sms section ------------
+
         $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
         $quotaguard = parse_url($quotaguard_env);
 
         $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
         $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
-
-        $sms = "Today : ".$text."with Max : ".$max."C and Min : ".$min
-        ."C and Rain - Day : ".$day_rain."% Night ".$night_rain."%";
 
         $curl = curl_init();
 
@@ -171,7 +192,7 @@ class SaveWeather extends Command
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"$text max $max c min $min c Rain - Day $day_rain % - Night $night_rain %\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Weather : $des max $ma c min $mi c Rain - Day $day % - Night $night %\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Postman-Token: 821fc916-caba-4789-ae01-91a2f49da20b",
@@ -189,6 +210,7 @@ class SaveWeather extends Command
         // } else {
         //   echo $response;
         // }
+
         // return view('okweather');
     }
 }
