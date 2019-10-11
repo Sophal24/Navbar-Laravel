@@ -28,6 +28,7 @@
 
                     
                     <a href="/api/sendsms"><button type="submit" class="btn btn-secondary btn-lg btn-block sendbg">Send Weather Manually</button></a>
+                    
                     <!-- <p style="font-size: 35px;">Post</p>
                     <div class="form-group">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must under 140 characters"></textarea>

@@ -98,6 +98,10 @@ class HomeController extends Controller
         return view('ok');
     }
 
+    public function okweather(){
+        return view('okweather');
+    }
+
 
     public function textarea (){
         $text = new textareaModel;
