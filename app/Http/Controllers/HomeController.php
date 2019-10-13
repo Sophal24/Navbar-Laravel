@@ -104,6 +104,7 @@ class HomeController extends Controller
     }
 
 
+    //getting data from textarea -> save in database -> and then send to All Users
     public function textarea (){
         $text = new textareaModel;
 

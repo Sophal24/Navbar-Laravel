@@ -97,9 +97,9 @@
                         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
                           <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Subscribers</a>
-                          <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Log</a>
+                          <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Logs</a>
                           <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
-                          <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather History</a>
+                          <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather Histories</a>
                             <!-- @if(Auth::user()) -->
                                 
                                 <!-- @if (Route::has('register')) -->
@@ -146,9 +146,9 @@
                 </div>
             </div>
         </nav>
-        <br>
 
-        <main>
+
+        <main style="margin-top: 10px;">
             @yield('content')
         </main>
     </div>

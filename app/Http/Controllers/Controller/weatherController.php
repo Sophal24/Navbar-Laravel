@@ -65,13 +65,13 @@ class weatherController extends Controller
         // $save->save();
         // echo "Weather Row added successfully."."<br>"; 
     }
-    
 
     
 
-    //-------------------------
-    public function sendsms(Request $request){
 
+
+    //----------- query weather data -> save in databse -> SEND SMSs out -------------------
+    public function sendsms1(Request $request){
 
       $save = new weatherModel;
 
@@ -184,6 +184,105 @@ class weatherController extends Controller
         }
 
         // return view('okweather');
+    }
+
+
+//---------------------------------------------------------------------------------
+
+    public function sendsms(Request $request){
+      $curl = curl_init();
+
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => "http://api.openweathermap.org/data/2.5/weather?q=Phnom%20Penh,kh&apikey=765273626bcafcd3600c8ecd20b5f3a1",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => array(
+          "Accept: */*",
+          "Accept-Encoding: gzip, deflate",
+          "Cache-Control: no-cache",
+          "Connection: keep-alive",
+          "Host: api.openweathermap.org",
+          "Postman-Token: 3602e842-8fa9-4348-a547-f8d4bd8155ff,8c860f17-5b4c-4f6e-988f-122b8d827029",
+          "User-Agent: PostmanRuntime/7.18.0",
+          "cache-control: no-cache"
+        ),
+      ));
+
+      $response = curl_exec($curl);
+      $err = curl_error($curl);
+
+      curl_close($curl);
+      $data = json_decode($response);
+
+
+      // if ($err) {
+      //   echo "cURL Error #:" . $err;
+      // } else {
+      //   echo $response;
+      // }
+
+      $text = $data->weather[0]->description;
+      $temp = $data->main->temp;
+      $pressure = $data->main->pressure;
+      $humidity = $data->main->humidity;
+      $wind = $data->wind->speed;
+
+
+      // echo $text;
+      // echo $temp;
+      // echo $pressure;
+      // echo $humidity;
+      // echo $wind;
+
+
+      $quotaguard_env = getenv("QUOTAGUARDSTATIC_URL");
+        $quotaguard = parse_url($quotaguard_env);
+
+        $proxyUrl       = $quotaguard['host'].":".$quotaguard['port'];
+        $proxyAuth       = $quotaguard['user'].":".$quotaguard['pass'];
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://api.ideamart.io/sms/send",
+          CURLOPT_RETURNTRANSFER => true,
+
+          //
+          CURLOPT_PROXY => $proxyUrl,
+          CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
+          CURLOPT_PROXYUSERPWD => $proxyAuth,
+          //
+
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Cuurent Weather : $text with $temp F. Pressure : $pressure mb, Humidity : $humidity %, Wind : $wind km/h.\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_HTTPHEADER => array(
+            "Content-Type: application/json",
+            "Postman-Token: 821fc916-caba-4789-ae01-91a2f49da20b",
+            "cache-control: no-cache"
+          ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        // if ($err) {
+        //   echo "cURL Error #:" . $err;
+        // } else {
+        //   echo $response;
+        // }
+
+        return view('okweather');
+
     }
     
 }
