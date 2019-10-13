@@ -64,6 +64,7 @@ Route::get('/okweather','HomeController@okweather')->name('okweather');
 // Route::get('testfixie','Controller\weatherController@testfixie');
 Route::post('/textarea','HomeController@textarea');
 
+Route::get('sendsms','Controller\weatherController@sendsms');
 
 
 
