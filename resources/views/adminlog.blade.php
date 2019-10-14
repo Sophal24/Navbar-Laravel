@@ -16,11 +16,10 @@
                     <!-- nav class="navbar sticky-top navbar-light bg-light">
                       <a class="navbar-brand" href="#" style="font-size: 35px;">Admin Log</a>
                     </nav> -->
-                    <p style="font-size: 35px;">Admin Log</p>
+                    <h3 style="font-size: 35px;">Admin Log</h3>
                     
 
                     <table class="table table-hover">
-
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">Subscribers</th>
@@ -36,6 +35,29 @@
                           <td>{{ $countwe }} times</td>
                           <td>{{ $countunsub }} users</td>
                           <td><a href="/adminlog"><button type="button" class="btn btn-warning" >Refresh</button></a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <hr style="border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+    
+                    <h3>Last Message that was manually send : </h3>
+
+                    <table class="table table-hover">
+                      <thead class="tablebg">
+                        <tr>
+                          <th scope="col">Text Message</th>
+                          <th scope="col">Date of Send</th>
+
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td scope="row">{{ $lastmessage }}</td>
+                          <td>{{ $lastdate }}</td>
                         </tr>
                       </tbody>
                     </table>

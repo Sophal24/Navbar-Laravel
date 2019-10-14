@@ -79,7 +79,12 @@ class HomeController extends Controller
         $countsub = count($subscriber);
         $countunsub = count($unsubscriber); 
         $countwe  = count($we);
-        return view('adminlog',compact('countsub','countunsub','countwe'));
+
+
+        $lastmessage = textareaModel::all()->sortByDesc("id")->first()->text;
+        $lastdate = textareaModel::all()->sortByDesc("id")->first()->created_at;
+
+        return view('adminlog',compact('countsub','countunsub','countwe','lastmessage','lastdate'));
     }
 
     public function post(){
@@ -94,20 +99,20 @@ class HomeController extends Controller
 
         // $data = weatherModel::paginate(5);
 
-
         // foreach ($data as $value) {
         //     # code...
         //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
         // }
-
         
         $count = count($data);
         return view('weatherhistory', compact('data','count'));
     }
 
+
     public function ok(){
         return view('ok');
     }
+
 
     public function okweather(){
         return view('okweather');
@@ -118,13 +123,9 @@ class HomeController extends Controller
     public function textarea(){
 
         $text = new textareaModel;
-
         $text->text = request('text');
-        // echo $text;
-        // $text->save();
         $text->save();
 
-        //
         // if ($text->save()) {
         //     # code...
         //     echo "Save successfully";
@@ -179,7 +180,6 @@ class HomeController extends Controller
         //   echo $response;
         // }
 
-        // $text->save();
         return view('ok');
     }
 
