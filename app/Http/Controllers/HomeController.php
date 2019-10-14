@@ -52,7 +52,10 @@ class HomeController extends Controller
     public function user(){
 
         $query = subscriberModel::all();
-        $data = $query->where('status','REGISTERED');
+        // $data = $query->where('status','REGISTERED')->paginate(2);
+
+        $data = subscriberModel::where('status','REGISTERED')->paginate(5);
+
         $count = count($data);
         return view('user',compact('data','count'));
     }
@@ -60,6 +63,8 @@ class HomeController extends Controller
     public function unuser(){
         $query = subscriberModel::all();
         $data = $query->where('status','UNREGISTERED');
+
+        $data = subscriberModel::where('status','UNREGISTERED')->paginate(5);
         $count = count($data);
         return view('unuser',compact('data','count'));
     }
