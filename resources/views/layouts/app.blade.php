@@ -80,7 +80,7 @@
 <body>
     <div id="app">
         <!--  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="height: 90px;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm sticky-top" style="height: 90px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Welcome Screen') }} -->
