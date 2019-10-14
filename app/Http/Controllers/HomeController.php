@@ -82,15 +82,20 @@ class HomeController extends Controller
     }
 
     public function weatherhistory(){
-        $data = weatherModel::all()->sortByDesc("id"); 
-        // $data = weatherModel::orderBy('id','asc')->groupBy('id')->get();    
-        // echo "<h2>Weather Data History</h2>";
+
+        // $data = weatherModel::all()->sortByDesc("id");
+
+        $data = weatherModel::all()->unique("date")->sortByDesc("id");
+        
+        // $data = weatherModel::paginate(5);
+
 
         // foreach ($data as $value) {
         //     # code...
         //     echo $value->id."-".$value->description."-".$value->max_tem."-".$value->min_tem."-".$value->day_rain."-".$value->night_rain."-".$value->date."<br>";
         // }
-        // $distinct = distinct($data);
+
+        
         $count = count($data);
         return view('weatherhistory', compact('data','count'));
     }
@@ -105,7 +110,8 @@ class HomeController extends Controller
 
 
     //getting data from textarea -> save in database -> and then send to All Users
-    public function textarea (){
+    public function textarea(){
+
         $text = new textareaModel;
 
         $text->text = request('text');
