@@ -86,7 +86,7 @@ class HomeController extends Controller
         // $data = weatherModel::all()->sortByDesc("id");
 
         $data = weatherModel::all()->unique("date")->sortByDesc("id");
-        
+
         // $data = weatherModel::paginate(5);
 
 
