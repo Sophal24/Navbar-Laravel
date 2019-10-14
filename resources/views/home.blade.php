@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <p class="navbar-brand" href="#" style="font-size: 35px;">Weather</p>
+                    <h2 class="navbar-brand" href="#" style="font-size: 35px;">Weather</h2>
                     <?php
                         date_default_timezone_set('Asia/Phnom_Penh');
                         $apiKey = "765273626bcafcd3600c8ecd20b5f3a1";

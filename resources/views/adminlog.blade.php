@@ -40,9 +40,9 @@
                     </table>
 
                     <hr style="border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
-    
+                    height: 1px;
+                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+
                     <h3>Last Message that was manually send : </h3>
 
                     <table class="table table-hover">
