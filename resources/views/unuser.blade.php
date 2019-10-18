@@ -17,13 +17,12 @@
 					             <a class="navbar-brand" href="/unuser" style="font-size: 35px;color: red;">Unsubscriber</a>
 
       					   <form class="form-inline">
-                  <a href="/user"><button type="button" class="btn btn-success">Go to Users</button></a>
+                  <a href="/user"><button type="button" class="btn btn-success"><i class="fas fa-caret-right"></i> Go to Subscribers</button></a>
       					  </form>
 					         </nav>
 
         					<div>
-                      Total Users : {{ $count }}
-
+                      Unsubscriber : {{ $count }}
         					</div>
 
                   <table class="table table-hover">
@@ -45,7 +44,7 @@
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
                         <td>{{ $row->frequency }}</td>
-                        <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                        <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td>
                       </tr>
                       @endforeach
                       
