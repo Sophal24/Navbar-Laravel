@@ -19,7 +19,7 @@
 
                         <h2 style="font-size: 35px;">Post</h2>
                         <div class="form-group">
-                            <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must be under 140 characters" required></textarea>
+                            <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must be under 160 characters" required></textarea>
                         </div>
 
                         

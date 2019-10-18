@@ -67,4 +67,6 @@ Route::post('/textarea','HomeController@textarea');
 Route::get('sendsms','Controller\weatherController@sendsms');
 
 
+Route::get('/delete/{id}','HomeController@delete');
+
 

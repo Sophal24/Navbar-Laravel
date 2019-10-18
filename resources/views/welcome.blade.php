@@ -90,6 +90,7 @@
                 </div>
             @endif
 
+                               
             <div class="content">
 
                 <a class="navbar-brand" href="{{ url('/home') }}">

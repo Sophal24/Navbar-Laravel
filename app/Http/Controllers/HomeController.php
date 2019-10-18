@@ -183,6 +183,11 @@ class HomeController extends Controller
         return view('ok');
     }
 
+    //delete user in user tab
+    public function delete($id){
+        DB::table('subscribers')->where('id',$id)->delete();
+    }
+
 
     
 }

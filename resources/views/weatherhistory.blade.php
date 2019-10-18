@@ -30,7 +30,7 @@
                         </tr>
                       </thead>
                       <tbody style="font-size: 15px;">
-
+                        
                         @foreach($data as $row)
                         <tr>
                           <th scope="row">{{$row->id}}</th>
