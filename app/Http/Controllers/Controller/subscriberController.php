@@ -32,9 +32,8 @@ class subscriberController extends Controller
       // echo $request->input('subscriberId');
 
       $subid = $request->input('subscriberId');
-      // echo $subid; 
+      echo $subid; 
       
-
     	// $subid = $request->input('subscriberId');
 
     	$user_favorites = DB::table('subscribers')
@@ -51,7 +50,7 @@ class subscriberController extends Controller
 
       		$data->save();
 
-      		// echo "Brand new user was Saved";
+      		// echo "Brand new user was Saved successfully.";
 
   		} else {
   		    // It exists - remove old ones and save the new one.
@@ -60,7 +59,7 @@ class subscriberController extends Controller
   		    DB::table('subscribers')
   		    ->where('subscriberId', '=', $subid)
   		  	->delete();
-  		    // echo "Done Delete and ";
+  		    // echo "Done Delete old row and ";
 
   		    $data->frequency = $request->input('frequency');
           $data->status = $request->input('status');
@@ -68,7 +67,7 @@ class subscriberController extends Controller
 
       		$data->save();
 
-      		// echo "Saved";
+      		// echo "Saved successfully.";
 
   		}
     }
