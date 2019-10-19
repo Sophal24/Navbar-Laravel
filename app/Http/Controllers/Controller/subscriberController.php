@@ -26,10 +26,6 @@ class subscriberController extends Controller
     public function savesub(Request $request){
     	$data = new subscriberModel;
 
-    	$data->subscriberId = $request->input('subscriberId');
-    	$data->status = $request->input('status');
-    	$data->frequency = $request->input('frequency');
-
     	// $data->save();
     	$subid = $request->input('subscriberId');
 
@@ -47,8 +43,6 @@ class subscriberController extends Controller
 
       		$data->save();
       		// echo "Brand new user was Saved";
-
-
 
   		} else {
   		    // It exists - remove from favorites button will show
