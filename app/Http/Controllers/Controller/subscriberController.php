@@ -24,9 +24,9 @@ class subscriberController extends Controller
   //   }
 
     public function savesub(Request $request){
+
     	$data = new subscriberModel;
 
-    	// $data->save();
     	$subid = $request->input('subscriberId');
 
     	$user_favorites = DB::table('subscribers')
@@ -34,7 +34,7 @@ class subscriberController extends Controller
 		    ->first();
 
   		if (is_null($user_favorites)) {
-  		    // It does not exist - add to favorites button will show
+  		    // It does not exist - add new user to the database
   		    // echo "no";
 
   		    $data->subscriberId = $request->input('subscriberId');
@@ -45,7 +45,7 @@ class subscriberController extends Controller
       		// echo "Brand new user was Saved";
 
   		} else {
-  		    // It exists - remove from favorites button will show
+  		    // It exists - remove old ones and save the new one.
   		    // echo "yes";
   		    DB::table('subscribers')
   		    ->where('subscriberId', '=', $subid)
