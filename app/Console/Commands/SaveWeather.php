@@ -192,7 +192,7 @@ class SaveWeather extends Command
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Weather : $des max $ma c min $mi c Rain - Day $day % - Night $night %\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"4f57f292e3351ffb49cb4b7b2ec09c71\",\n    \"applicationId\":\"APP_053430\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Weather : $des max $ma c min $mi c Rain - Day $day % - Night $night %\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"c227ec9b7b066e1732bf20353fcf19d0\",\n    \"applicationId\":\"APP_053770\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Postman-Token: 821fc916-caba-4789-ae01-91a2f49da20b",

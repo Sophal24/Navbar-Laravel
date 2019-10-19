@@ -37,35 +37,35 @@ class subscriberController extends Controller
 		    ->where('subscriberId', '=', $subid)
 		    ->first();
 
-		if (is_null($user_favorites)) {
-		    // It does not exist - add to favorites button will show
-		    // echo "no";
+  		if (is_null($user_favorites)) {
+  		    // It does not exist - add to favorites button will show
+  		    // echo "no";
 
-		    $data->subscriberId = $request->input('subscriberId');
-    		$data->status = $request->input('status');
-    		$data->frequency = $request->input('frequency');
+  		    $data->subscriberId = $request->input('subscriberId');
+      		$data->status = $request->input('status');
+      		$data->frequency = $request->input('frequency');
 
-    		$data->save();
-    		// echo "Brand new user was Saved";
+      		$data->save();
+      		// echo "Brand new user was Saved";
 
 
 
-		} else {
-		    // It exists - remove from favorites button will show
-		    // echo "yes";
-		    DB::table('subscribers')
-		    ->where('subscriberId', '=', $subid)
-		  	->delete();
-		    // echo "Done Delete and ";
+  		} else {
+  		    // It exists - remove from favorites button will show
+  		    // echo "yes";
+  		    DB::table('subscribers')
+  		    ->where('subscriberId', '=', $subid)
+  		  	->delete();
+  		    // echo "Done Delete and ";
 
-		    $data->subscriberId = $request->input('subscriberId');
-    		$data->status = $request->input('status');
-    		$data->frequency = $request->input('frequency');
+  		    $data->subscriberId = $request->input('subscriberId');
+      		$data->status = $request->input('status');
+      		$data->frequency = $request->input('frequency');
 
-    		$data->save();
-    		// echo "Saved";
+      		$data->save();
+      		// echo "Saved";
 
-		}
+  		}
     }
 
 
