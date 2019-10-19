@@ -27,7 +27,20 @@ class subscriberController extends Controller
 
     	$data = new subscriberModel;
 
-    	$subid = $request->input('subscriberId');
+      // echo $request->input('frequency');
+      // echo $request->input('status');
+      // echo $request->input('subscriberId');
+
+      $subid = $request->input('subscriberId');
+      // echo $subid; 
+
+
+      // $data->subscriberId = $request->input('subscriberId');
+      // $data->status = $request->input('status');
+      // $data->frequency = $request->input('frequency');
+      
+
+    // 	$subid = $request->input('subscriberId');
 
     	$user_favorites = DB::table('subscribers')
 		    ->where('subscriberId', '=', $subid)
@@ -37,26 +50,29 @@ class subscriberController extends Controller
   		    // It does not exist - add new user to the database
   		    // echo "no";
 
+          $data->frequency = $request->input('frequency');
+          $data->status = $request->input('status');
   		    $data->subscriberId = $request->input('subscriberId');
-      		$data->status = $request->input('status');
-      		$data->frequency = $request->input('frequency');
 
       		$data->save();
+
       		// echo "Brand new user was Saved";
 
   		} else {
   		    // It exists - remove old ones and save the new one.
   		    // echo "yes";
+
   		    DB::table('subscribers')
   		    ->where('subscriberId', '=', $subid)
   		  	->delete();
   		    // echo "Done Delete and ";
 
-  		    $data->subscriberId = $request->input('subscriberId');
-      		$data->status = $request->input('status');
-      		$data->frequency = $request->input('frequency');
+  		    $data->frequency = $request->input('frequency');
+          $data->status = $request->input('status');
+          $data->subscriberId = $request->input('subscriberId');
 
       		$data->save();
+          
       		// echo "Saved";
 
   		}
