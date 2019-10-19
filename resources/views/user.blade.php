@@ -34,7 +34,8 @@
                         <th scope="col">SubscriberId</th>
                         <th scope="col">Status</th>
                         <th scope="col">Frequency</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Date</th>
+                        <!-- <th scope="col">Delete</th> -->
                         
                       </tr>
                     </thead>
@@ -47,7 +48,8 @@
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
                         <td>{{ $row->frequency }}</td>
-                        <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td>
+                        <td>{{ $row->created_at }} UTC</td>
+                        <!-- <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td> -->
                       </tr>
                       @endforeach
                       
