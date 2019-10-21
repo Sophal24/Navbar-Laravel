@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubscribersTable extends Migration
+class ChangeFrequencyTypeInSubscribers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateSubscribersTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscribers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('subscriberId');
-            $table->string('status');
+        Schema::table('subscribers', function (Blueprint $table) {
+            //
             $table->string('frequency')->nullable()->change();
-            $table->timestamps();
         });
     }
 
@@ -29,6 +26,8 @@ class CreateSubscribersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscribers');
+        Schema::table('subscribers', function (Blueprint $table) {
+            //
+        });
     }
 }
