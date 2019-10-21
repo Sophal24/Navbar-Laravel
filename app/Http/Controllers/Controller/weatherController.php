@@ -262,7 +262,7 @@ class weatherController extends Controller
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Cuurent Weather : $text with $temp F. Pressure : $pressure mb, Humidity : $humidity %, Wind : $wind km/h.\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"c227ec9b7b066e1732bf20353fcf19d0\",\n    \"applicationId\":\"APP_053770\"\n}",
+          CURLOPT_POSTFIELDS => "{\n    \"message\":\"Current Weather : $text with $temp F. Pressure : $pressure mb, Humidity : $humidity %, Wind : $wind km/h.\",\n    \"destinationAddresses\":[\"tel:all\"],\n    \"password\":\"c227ec9b7b066e1732bf20353fcf19d0\",\n    \"applicationId\":\"APP_053770\"\n}",
           CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
             "Postman-Token: 821fc916-caba-4789-ae01-91a2f49da20b",
