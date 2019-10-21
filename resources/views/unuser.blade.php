@@ -43,7 +43,7 @@
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
-                        <td>{{ $row->frequency }}</td>
+                        <td>Monthly</td>
                         <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td>
                       </tr>
                       @endforeach
