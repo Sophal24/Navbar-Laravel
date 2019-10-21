@@ -42,11 +42,11 @@ class subscriberController extends Controller
 
   		if (is_null($user_favorites)) {
   		    // It does not exist - add new user to the database
-  		    // echo "no";
-
-          $data->frequency = $request->input('frequency');
-          $data->status = $request->input('status');
+  		    // echo "No this user before so ";
+          
   		    $data->subscriberId = $request->input('subscriberId');
+          $data->status = $request->input('status');
+          $data->frequency = $request->input('frequency');
 
       		$data->save();
 
@@ -60,13 +60,13 @@ class subscriberController extends Controller
   		    ->where('subscriberId', '=', $subid)
   		  	->delete();
   		    // echo "Done Delete old row and ";
-
-  		    $data->frequency = $request->input('frequency');
-          $data->status = $request->input('status');
+          
           $data->subscriberId = $request->input('subscriberId');
+          $data->status = $request->input('status');
+          $data->frequency = $request->input('frequency');
 
       		$data->save();
-
+          
       		// echo "Saved successfully.";
 
   		}
