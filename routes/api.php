@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('savesub','Controller\subscriberController@savesub');
 
 
-Route::get('saveweather','Controller\weatherController@saveweather');
+// Route::get('saveweather','Controller\weatherController@saveweather');
 
 // Route::get('sendsms','Controller\weatherController@sendsms');
 
