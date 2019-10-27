@@ -26,16 +26,8 @@ class subscriberController extends Controller
     public function savesub(Request $request){
 
     	$data = new subscriberModel;
-
-      // echo $request->input('frequency');
-      // echo $request->input('status');
-      // echo $request->input('subscriberId');
-
-      $subid = $request->input('subscriberId');
-      echo $subid; 
-      
+      $subid = $request->input('subscriberId');      
     	// $subid = $request->input('subscriberId');
-
     	$user_favorites = DB::table('subscribers')
 		    ->where('subscriberId', '=', $subid)
 		    ->first();
@@ -43,28 +35,22 @@ class subscriberController extends Controller
   		if (is_null($user_favorites)) {
   		    // It does not exist - add new user to the database
   		    // echo "No this user before so ";
-          
   		    $data->subscriberId = $request->input('subscriberId');
           $data->status = $request->input('status');
           $data->frequency = $request->input('frequency');
-
       		$data->save();
-
       		// echo "Brand new user was Saved successfully.";
 
   		} else {
   		    // It exists - remove old ones and save the new one.
   		    // echo "yes";
-
   		    DB::table('subscribers')
   		    ->where('subscriberId', '=', $subid)
   		  	->delete();
   		    // echo "Done Delete old row and ";
-          
           $data->subscriberId = $request->input('subscriberId');
           $data->status = $request->input('status');
           $data->frequency = $request->input('frequency');
-
       		$data->save();
           
       		// echo "Saved successfully.";

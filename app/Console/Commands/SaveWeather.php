@@ -98,9 +98,6 @@ class SaveWeather extends Command
 
 
 
-
-
-
         $save = new weatherModel;
 
         $curl = curl_init();
