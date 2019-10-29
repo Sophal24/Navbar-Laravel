@@ -71,6 +71,12 @@
             height: 100px;
         }
 
+        .image{
+            width: 30px;
+            height: 35px;
+            border-radius: 100%;
+        }
+
     </style>
 
 
@@ -124,7 +130,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-user-circle"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                    <img src="sophal.jpg" class="image"> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right active" aria-labelledby="navbarDropdown">
