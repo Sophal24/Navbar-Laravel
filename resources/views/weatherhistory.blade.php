@@ -14,7 +14,7 @@
                     @endif
 
                     <div>
-                      Total Weather History : {{ $count }}
+                      Total Weather History : {{ $count }} times
                     </div>
 
                     <table class="table table-hover">
