@@ -74,7 +74,8 @@ class HomeController extends Controller
         $sub = subscriberModel::all();
         $subscriber = $sub->where('status','REGISTERED');
         $unsubscriber = $sub->where('status','UNREGISTERED');
-        $we = weatherModel::all();
+        // $we = weatherModel::all();
+        $we = weatherModel::all()->unique("date")->sortByDesc("id");
 
         $countsub = count($subscriber);
         $countunsub = count($unsubscriber); 
