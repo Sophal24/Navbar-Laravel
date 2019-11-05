@@ -31,9 +31,9 @@
 
                       <tbody>
                         <tr>
-                          <td scope="row">{{ $countsub }} users</td>
+                          <td scope="row">{{ $countsub }} subscriber(s)</td>
                           <td>{{ $countwe }} times</td>
-                          <td>{{ $countunsub }} users</td>
+                          <td>{{ $countunsub }} unsubscriber(s)</td>
                           <td><a href="/adminlog"><button type="button" class="btn btn-warning" >Refresh</button></a></td>
                         </tr>
                       </tbody>
