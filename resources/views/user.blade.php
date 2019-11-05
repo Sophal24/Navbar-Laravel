@@ -42,7 +42,7 @@
                     <tbody style="font-size: 18px;">
 
                       @foreach($data as $row)
-                      <tr>
+                      <tr class="table-success">
                         <th scope="row">{{ $row->id }}</th>
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->

@@ -32,7 +32,7 @@
                       <tbody style="font-size: 15px;">
                         
                         @foreach($data as $row)
-                        <tr>
+                        <tr class="table-info">
                           <th scope="row">{{$row->id}}</th>
                           <td>{{$row->description}}</td>
                           <td>{{$row->max_tem}}</td>

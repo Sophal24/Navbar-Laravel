@@ -95,7 +95,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Welcome Screen') }} -->
-                    <img src="weatherlogo.png" style="width: 90px; height: 90px;">
+                    <img src="weatherlogo.png" style="width: 80px; height: 80px;">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -169,11 +169,11 @@
               alwaysShow: true,
               threshold: 10,
               // warningClass: "label label-success",
-              warningClass: "alert alert-primary",
-              limitReachedClass: "alert alert-danger",
-              separator: ' out of ',
+              warningClass: "badge badge-warning",
+              limitReachedClass: "badge badge-danger",
+              separator: '/',
               preText: 'You wrote ',
-              postText: ' chars.',
+              postText: ' characters.',
               validate: true
         });
     </script>

@@ -22,8 +22,7 @@
                         <div class="form-group">
                             <textarea class="form-control" maxlength="250" name="text" id="exampleFormControlTextarea1" rows="3" style="height: 180px;" placeholder="Text to send news to client, must be under 250 characters" required></textarea>
                         </div>
-                        <br>
-                        <button type="submit" class="btn btn-secondary btn-lg btn-block sendbg" style="margin-top: 33px;">Send</button>
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block" style="margin-top: 33px;">Send</button>
 
 
                     </form >

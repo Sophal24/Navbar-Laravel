@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Users')
 @section('content')
-<div class="container">
+<div class="container table-responsive">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -25,26 +25,26 @@
                       Unsubscriber : {{ $count }}
         					</div>
 
-                  <table class="table table-hover">
+                  <table class="table table-hover table-bordered">
                     <thead class="tablebg">
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">SubscriberId</th>
                         <th scope="col">Status</th>
                         <th scope="col">Frequency</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
 
                       @foreach($data as $row)
-                      <tr>
+                      <tr class="table-danger">
                         <th scope="row">{{ $row->id }}</th>
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
                         <td>Monthly</td>
-                        <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td>
+                        <td><a onclick="return confirm('Do you want to delete this user?')" href="/delete/{{ $row->id }}"><button type="button" class="badge badge-danger"><i class="fas fa-times"></i> Delete</button></a></td>
                       </tr>
                       @endforeach
                       

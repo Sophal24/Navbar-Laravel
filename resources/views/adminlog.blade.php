@@ -19,13 +19,13 @@
                     <h3 style="font-size: 35px;">Admin Log</h3>
                     
 
-                    <table class="table table-hover">
+                    <table class="table table-hover table-bordered">
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">Subscribers</th>
                           <th scope="col">Weather History</th>
                           <th scope="col">Unsubscribers</th>
-                          <th scope="col">Refresh</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </thead>
 
@@ -45,7 +45,7 @@
 
                     <h3>Last message that was manually sent : </h3>
 
-                    <table class="table table-hover">
+                    <table class="table table-hover table-bordered">
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">Text Message</th>
