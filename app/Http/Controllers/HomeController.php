@@ -187,6 +187,7 @@ class HomeController extends Controller
     //delete user in user tab
     public function delete($id){
         DB::table('subscribers')->where('id',$id)->delete();
+        return redirect()->route('unuser');
     }
 
 
