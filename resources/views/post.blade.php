@@ -40,7 +40,7 @@
                     height: 1px;
                     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));margin-top: 30px;">
 
-                    <h4>Send Daily Weather in Case Heroku Didn't work</h4>
+                    <h4>Send Daily Weather In Case Heroku Didn't Work</h4>
 
                     <a onclick="return confirm('Are You Sure To Send?')" href="/senddailymanual"><button class="btn btn-danger">Send Daily Weather</button></i></a>
 
