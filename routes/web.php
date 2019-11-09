@@ -69,4 +69,6 @@ Route::get('sendsms','Controller\weatherController@sendsms');
 
 Route::get('/delete/{id}','HomeController@delete');
 
+Route::get('/senddailymanual','Controller\weatherController@senddailymanual');
+
 

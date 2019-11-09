@@ -34,7 +34,15 @@
                     <h4>Click to Send Current Weather</h4>
 
                     <a onclick="return confirm('Are You Sure To Send?')" href="/sendsms"><button class="btn btn-warning">Send Current Weather</button></i></a>
-                
+                    
+
+                    <hr style="border: 0;
+                    height: 1px;
+                    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));margin-top: 30px;">
+
+                    <h4>Send Daily Weather in Case Heroku Didn't work</h4>
+
+                    <a onclick="return confirm('Are You Sure To Send?')" href="/senddailymanual"><button class="btn btn-danger">Send Daily Weather</button></i></a>
 
                 </div>
             </div>
