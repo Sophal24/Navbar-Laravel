@@ -25,7 +25,7 @@
                       Unsubscriber : {{ $count }}
         					</div>
 
-                  <table class="table table-hover table-bordered">
+                  <table class="table table-hover table-bordered table-sm">
                     <thead class="tablebg">
                       <tr>
                         <th scope="col">ID</th>
@@ -38,7 +38,7 @@
                     <tbody>
 
                       @foreach($data as $row)
-                      <tr class="table-danger">
+                      <tr>
                         <th scope="row">{{ $row->id }}</th>
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->

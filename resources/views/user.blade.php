@@ -27,7 +27,7 @@
                       Active Users : {{ $count }}
         					</div>
 
-                  <table class="table table-hover">
+                  <table class="table table-hover table-sm">
                     <thead class="tablebg">
                       <tr>
                         <th scope="col">ID</th>
@@ -42,7 +42,7 @@
                     <tbody style="font-size: 18px;">
 
                       @foreach($data as $row)
-                      <tr class="table-success">
+                      <tr>
                         <th scope="row">{{ $row->id }}</th>
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->

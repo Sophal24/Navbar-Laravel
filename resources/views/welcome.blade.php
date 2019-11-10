@@ -67,21 +67,21 @@
                 margin-bottom: 30px;
             }
 
-            body{
+            /*body{
                 background: rgb(2,0,36);
                 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(9,17,126,1) 53%, rgba(8,34,137,1) 57%, rgba(7,59,153,1) 63%, rgba(6,84,170,1) 69%, rgba(5,101,181,1) 73%, rgba(4,113,189,1) 80%, rgba(0,212,255,1) 95%);
-            }
+            }*/
 
         </style>
     </head>
-    <body>
+    <body style="background-color: #F4EAE8">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}" style="color: white;"><i class="fas fa-home"></i> Home</a>
+                        <a href="{{ url('/home') }}"><i class="fas fa-home"></i> Home</a>
                     @else
-                        <a href="{{ route('login') }}" style="color: white;"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
 
                         <!-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" style="color: white;"><i class="fas fa-user-circle"></i> Register</a>
@@ -97,7 +97,7 @@
                     <!-- {{ config('app.name', 'Welcome Screen') }} -->
                     <img src="weatherlogo.png" style="width: 250px; height: 250px;" class="weatherlogo">
                 </a>
-                <div class="title m-b-md" style="color: white;">
+                <div class="title m-b-md">
                     Dashboard
                 </div>
                 <div class="title m-b-md">

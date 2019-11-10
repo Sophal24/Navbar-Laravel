@@ -43,10 +43,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-maxlength/1.7.0/bootstrap-maxlength.min.js"></script>
 
     <style type="text/css">
-        body{
+        /*body{
             background: rgb(2,0,36);
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(9,17,126,1) 53%, rgba(8,34,137,1) 57%, rgba(7,59,153,1) 63%, rgba(6,84,170,1) 69%, rgba(5,101,181,1) 73%, rgba(4,113,189,1) 80%, rgba(0,212,255,1) 100%);
-        }
+        }*/
         .tablebg{
             background: rgb(2,0,36);
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 51%, rgba(9,17,126,1) 53%, rgba(8,34,137,1) 57%, rgba(7,59,153,1) 63%, rgba(6,84,170,1) 69%, rgba(5,101,181,1) 73%, rgba(4,113,189,1) 80%, rgba(0,212,255,1) 100%);
@@ -89,14 +89,14 @@
 
 
 </head>
-<body>
+<body style="background-color: #F4EAE8">
     <div id="app">
         <!--  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm sticky-top" style="height: 90px;">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Welcome Screen') }} -->
-                    <img src="weatherlogo.png" style="width: 80px; height: 80px;">
+                    <img src="weatherlogo.png" style="width: 60px; height: 60px;">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -105,22 +105,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto" style="margin-left: -20px;">
-                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <ul class="navbar-nav mr-auto">
+                        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
                           <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Subscribers</a>
                           <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Logs</a>
                           <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
                           <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather Histories</a>
-                            <!-- @if(Auth::user()) -->
-                                
-                                <!-- @if (Route::has('register')) -->
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Add Admin') }}</a>
-                                    </li> -->
-                                <!-- @endif -->
-                            <!-- @endif -->
-                        </nav>
+                        </nav> -->
+
+                        <a class="navbar-brand" href="{{ url('/weather') }}">Weather</a>
+                          <a class="navbar-brand" href="/user"><i class="fas fa-users"></i> Subscribers</a>
+                          <a class="navbar-brand" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Logs</a>
+                          <a class="navbar-brand" href="/post"><i class="fas fa-paste"></i> Post</a>
+                          <a class="navbar-brand" href="/weatherhistory"><i class="fas fa-history"></i> Weather Histories</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

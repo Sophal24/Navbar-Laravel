@@ -19,7 +19,7 @@
                     <h3 style="font-size: 35px;">Admin Log</h3>
                     
 
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered table-sm">
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">Subscribers</th>
@@ -45,7 +45,7 @@
 
                     <h3>Last message that was manually sent : </h3>
 
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered table-sm">
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">Text Message</th>

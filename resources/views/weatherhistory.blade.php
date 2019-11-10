@@ -17,7 +17,7 @@
                       Total Weather History : {{ $count }} times
                     </div>
 
-                    <table class="table table-hover">
+                    <table class="table table-hover table-sm table-bordered">
                       <thead class="tablebg">
                         <tr>
                           <th scope="col">ID</th>
