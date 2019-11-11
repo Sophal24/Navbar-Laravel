@@ -190,6 +190,10 @@ class HomeController extends Controller
         return redirect()->route('unuser');
     }
 
+    public function qrcode(){
+        return view('qrcode');
+    }
+
 
     
 }

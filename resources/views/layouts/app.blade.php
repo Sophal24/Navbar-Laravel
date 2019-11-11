@@ -140,6 +140,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right active" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/qrcode"><i class="fas fa-qrcode"></i> QRCode</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

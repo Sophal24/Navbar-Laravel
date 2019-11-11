@@ -71,4 +71,5 @@ Route::get('/delete/{id}','HomeController@delete');
 
 Route::get('/senddailymanual','Controller\weatherController@senddailymanual');
 
+Route::get('/qrcode','HomeController@qrcode');
 
