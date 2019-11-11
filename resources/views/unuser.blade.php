@@ -31,7 +31,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">SubscriberId</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Frequency</th>
+                        <!-- <th scope="col">Frequency</th> -->
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -43,7 +43,7 @@
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
-                        <td>Monthly</td>
+                        <!-- <td>Monthly</td> -->
                         <td><a onclick="return confirm('Do you want to delete this user?')" href="/delete/{{ $row->id }}"><button type="button" class="badge badge-danger"><i class="fas fa-times"></i> Delete</button></a></td>
                       </tr>
                       @endforeach
