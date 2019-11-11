@@ -8,6 +8,8 @@ use App\Models\weatherModel;
 use App\Models\subscriberModel;
 use App\Models\textareaModel;
 use DB;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -193,6 +195,32 @@ class HomeController extends Controller
     public function qrcode(){
         return view('qrcode');
     }
+
+    public function saveadmin(){
+        $admin = new User;
+        $admin->name = request('name');
+        $admin->email = request('email');
+        $admin->password = Hash::make(request('password'));
+
+        if ($admin->save()) {
+            return view('oksaveadmin');
+        }else{
+            return view('oknotsaveadmin');
+        }
+    }
+
+    public function addadmin(){
+        return view('addadmin');
+    }
+
+
+    // public function oksaveadmin(){
+    //     return view('oksaveadmin');
+    // }
+
+    // public function oknotsaveadmin(){
+    //     return view('oknotsaveadmin');
+    // }
 
 
     

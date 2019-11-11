@@ -115,10 +115,10 @@
                         </nav> -->
 
                         <a class="navbar-brand" href="{{ url('/weather') }}">Weather</a>
-                          <a class="navbar-brand" href="/user"><i class="fas fa-users"></i> Subscribers</a>
-                          <a class="navbar-brand" href="/adminlog"><i class="fas fa-toolbox"></i> Admin Logs</a>
-                          <a class="navbar-brand" href="/post"><i class="fas fa-paste"></i> Post</a>
-                          <a class="navbar-brand" href="/weatherhistory"><i class="fas fa-history"></i> Weather Histories</a>
+                          <a class="navbar-brand" href="/user"><i class="fas fa-users"></i>Subscribers</a>
+                          <a class="navbar-brand" href="/adminlog"><i class="fas fa-toolbox"></i>Admin Logs</a>
+                          <a class="navbar-brand" href="/post"><i class="fas fa-paste"></i>Post</a>
+                          <a class="navbar-brand" href="/weatherhistory"><i class="fas fa-history"></i>Weather Histories</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -136,10 +136,13 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="sophal.jpg" class="image"> {{ Auth::user()->name }} <span class="caret"></span>
+                                    <i class="fas fa-user-shield"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right active" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="/addadmin"><i class="fas fa-user-plus"></i> Add Admin</a>
+
                                     <a class="dropdown-item" href="/qrcode"><i class="fas fa-qrcode"></i> QRCode</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

@@ -72,4 +72,10 @@ Route::get('/delete/{id}','HomeController@delete');
 Route::get('/senddailymanual','Controller\weatherController@senddailymanual');
 
 Route::get('/qrcode','HomeController@qrcode');
+Route::get('/addadmin','HomeController@addadmin');
+Route::post('/saveadmin','HomeController@saveadmin');
+
+
+Route::get('/oksaveadmin','HomeController@oksaveadmin');
+Route::get('/oknotsaveadmin','HomeController@oknotsaveadmin');
 
