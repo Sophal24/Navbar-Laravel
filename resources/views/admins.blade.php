@@ -13,9 +13,7 @@
                         </div>
                     @endif
                     
-                    <nav class="navbar navbar-light bg-light">
-					             <a class="navbar-brand" href="/user" style="font-size: 35px;color: green;">Admins</a>
-					         </nav>
+                  <p style="font-size: 35px; color: green;">Admins</p>
 
                   <table class="table table-hover table-sm">
                     <thead class="tablebg">

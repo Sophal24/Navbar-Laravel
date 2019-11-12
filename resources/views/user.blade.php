@@ -17,8 +17,6 @@
 					             <a class="navbar-brand" href="/user" style="font-size: 35px;color: green;">Subscribers</a>
 
       					       <form class="form-inline">
-      					         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      						      <button type="button" class="btn btn-dark">Search</button> -->
                         <a href="unuser"><button type="button" class="btn btn-warning"><i class="fas fa-caret-right"></i> Go to Unsubscriber</button></a>
       					       </form>
 					         </nav>
@@ -47,10 +45,7 @@
                         <td>{{ Str::limit($row->subscriberId,15) }}</td>
                         <!-- <td>{{ $row->subscriberId }}</td> -->
                         <td>{{ $row->status }}</td>
-                        <!-- <td>Monthly</td> -->
-                        <!-- <td style="font-size: 12px; color: green;">{{ $row->created_at }} UTC</td> -->
                         <td>{{ $row->created_at }} UTC</td>
-                        <!-- <td><a onclick="return confirm('Are you sure?')" href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger"><i class="fas fa-times"></i> Delete</button></a></td> -->
                       </tr>
                       @endforeach
                       

@@ -185,7 +185,6 @@
             </div>
         </nav>
 
-
         <main style="margin-top: 10px;">
             @yield('content')
         </main>
