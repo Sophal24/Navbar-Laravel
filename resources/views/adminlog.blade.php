@@ -25,7 +25,7 @@
                           <th scope="col">Subscribers</th>
                           <th scope="col">Weather History</th>
                           <th scope="col">Unsubscribers</th>
-                          <th scope="col">Action</th>
+                          <!-- <th scope="col">Action</th> -->
                         </tr>
                       </thead>
 
@@ -34,7 +34,7 @@
                           <td scope="row">{{ $countsub }} subscriber(s)</td>
                           <td>{{ $countwe }} times</td>
                           <td>{{ $countunsub }} unsubscriber(s)</td>
-                          <td><a href="/adminlog"><button type="button" class="btn btn-warning" >Refresh</button></a></td>
+                          <!-- <td><a href="/adminlog"><button type="button" class="btn btn-warning" >Refresh</button></a></td> -->
                         </tr>
                       </tbody>
                     </table>
