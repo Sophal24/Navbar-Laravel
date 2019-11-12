@@ -103,9 +103,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto bd-navbar">
                         <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                           <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
                           <a class="nav-link active" href="/user"><i class="fas fa-users"></i> Subscribers</a>
@@ -113,12 +113,32 @@
                           <a class="nav-link active" href="/post"><i class="fas fa-paste"></i> Post</a>
                           <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i> Weather Histories</a>
                         </nav> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('/weather') }}">Weather</a>
+                        </li>
 
-                        <a class="navbar-brand" href="{{ url('/weather') }}">Weather</a>
-                          <a class="navbar-brand" href="/user"><i class="fas fa-users"></i>Subscribers</a>
-                          <a class="navbar-brand" href="/adminlog"><i class="fas fa-toolbox"></i>Admin Logs</a>
-                          <a class="navbar-brand" href="/post"><i class="fas fa-paste"></i>Post</a>
-                          <a class="navbar-brand" href="/weatherhistory"><i class="fas fa-history"></i>Weather Histories</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/user"><i class="fas fa-users"></i>Subscribers</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/adminlog"><i class="fas fa-toolbox"></i>Admin Logs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/post"><i class="fas fa-paste"></i>Post</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/weatherhistory"><i class="fas fa-history"></i>Weather Histories</a>
+                        </li>
+
+
+                        <!-- <a class="navbar-brand" href="{{ url('/weather') }}">Weather</a>
+                        <a class="navbar-brand" href="/user"><i class="fas fa-users"></i>Subscribers</a>
+                        <a class="navbar-brand" href="/adminlog"><i class="fas fa-toolbox"></i>Admin Logs</a>
+                        <a class="navbar-brand" href="/post"><i class="fas fa-paste"></i>Post</a>
+                        <a class="navbar-brand" href="/weatherhistory"><i class="fas fa-history"></i>Weather Histories</a> -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -144,6 +164,9 @@
                                     <a class="dropdown-item" href="/addadmin"><i class="fas fa-user-plus"></i> Add Admin</a>
 
                                     <a class="dropdown-item" href="/qrcode"><i class="fas fa-qrcode"></i> QRCode</a>
+
+                                    <a class="dropdown-item" href="/admins"><i class="fas fa-users-cog"></i> Admins</a>
+
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -68,6 +68,7 @@ Route::get('sendsms','Controller\weatherController@sendsms');
 
 
 Route::get('/delete/{id}','HomeController@delete');
+Route::get('/deleteadmin/{id}','HomeController@deleteadmin');
 
 Route::get('/senddailymanual','Controller\weatherController@senddailymanual');
 
@@ -78,4 +79,6 @@ Route::post('/saveadmin','HomeController@saveadmin');
 
 Route::get('/oksaveadmin','HomeController@oksaveadmin');
 Route::get('/oknotsaveadmin','HomeController@oknotsaveadmin');
+Route::get('/admins','HomeController@admins');
+Route::get('/adminss','HomeController@adminss');
 

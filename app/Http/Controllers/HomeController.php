@@ -71,6 +71,16 @@ class HomeController extends Controller
         return view('unuser',compact('data','count'));
     }
 
+    // --------------get admins----------------
+    
+    public function admins(){
+        $data = User::all();
+        return view('admins',compact('data'));
+        // return view('admins');
+        // return "hi";
+    }
+    // ----------------------------------------
+
     public function adminlog(){
 
         $sub = subscriberModel::all();
@@ -192,6 +202,12 @@ class HomeController extends Controller
         return redirect()->route('unuser');
     }
 
+    public function deleteadmin($id){
+        DB::table('users')->where('id',$id)->delete();
+        // return redirect()->route('admins');
+        return redirect()->route('adminss');
+    }
+
     public function qrcode(){
         return view('qrcode');
     }
@@ -214,9 +230,9 @@ class HomeController extends Controller
     }
 
 
-    // public function oksaveadmin(){
-    //     return view('oksaveadmin');
-    // }
+    public function adminss(){
+        return view('admins');
+    }
 
     // public function oknotsaveadmin(){
     //     return view('oknotsaveadmin');
